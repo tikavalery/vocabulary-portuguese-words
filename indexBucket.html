@@ -118,10 +118,10 @@ meaning	significado
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+             words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

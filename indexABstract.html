@@ -12,47 +12,46 @@
 
     <script>
         const wordPairs = `
-         English	Español
-In a distant land, there lived a young philosopher named Elena.	En una tierra lejana, vivía una joven filósofa llamada Elena.
-She was fascinated by the mysteries of love, time, and fear.	Estaba fascinada por los misterios del amor, el tiempo y el miedo.
-Every day, she walked through the forest, thinking about justice and ethics.	Cada día, caminaba por el bosque, pensando en la justicia y la ética.
-She believed that knowledge was the light that guided humanity.	Creía que el conocimiento era la luz que guiaba a la humanidad.
-Elena studied ancient texts about culture and language.	Elena estudiaba textos antiguos sobre la cultura y el lenguaje.
-She also loved music, especially the soft tones of the flute.	También amaba la música, especialmente los tonos suaves de la flauta.
-One day, she met an old man who spoke only in math.	Un día, conoció a un anciano que hablaba solo en matemáticas.
-He said numbers held the secrets of the universe.	Dijo que los números contenían los secretos del universo.
-Elena asked him about beliefs and why people hold them so strongly.	Elena le preguntó sobre las creencias y por qué la gente las defendía con tanta fuerza.
-The man replied, “Beliefs are the roots of emotion and identity.”	El hombre respondió: “Las creencias son las raíces de la emoción y la identidad.”
-They sat by the river and talked about emotions for hours.	Se sentaron junto al río y hablaron sobre las emociones durante horas.
-“Emotions shape our perception of the world,” he said.	“Las emociones dan forma a nuestra percepción del mundo,” dijo.
-Elena believed in logic but respected the power of feelings.	Elena creía en la lógica, pero respetaba el poder de los sentimientos.
-She once wrote a poem about the balance between logic and love.	Una vez escribió un poema sobre el equilibrio entre la lógica y el amor.
-Her dream was to live in a world where freedom was sacred.	Su sueño era vivir en un mundo donde la libertad fuera sagrada.
-“Without freedom, there is no true consciousness,” she often said.	“Sin libertad, no hay verdadera conciencia,” solía decir.
-As she grew older, Elena became a teacher of philosophy.	Al envejecer, Elena se convirtió en profesora de filosofía.
-Her students listened carefully to her ideas about time and ethics.	Sus estudiantes escuchaban con atención sus ideas sobre el tiempo y la ética.
-She taught that justice is not just a law, but a way of life.	Enseñaba que la justicia no es solo una ley, sino una forma de vida.
-Elena’s words lived on, even after she was gone.	Las palabras de Elena vivieron, incluso después de su partida.
+In a distant land, there lived a young philosopher named Elena.	Em uma terra distante, vivia uma jovem filósofa chamada Elena.
+She was fascinated by the mysteries of love, time, and fear.	Ela era fascinada pelos mistérios do amor, do tempo e do medo.
+Every day, she walked through the forest, thinking about justice and ethics.	Todos os dias, ela caminhava pela floresta, pensando sobre justiça e ética.
+She believed that knowledge was the light that guided humanity.	Ela acreditava que o conhecimento era a luz que guiava a humanidade.
+Elena studied ancient texts about culture and language.	Elena estudava textos antigos sobre cultura e linguagem.
+She also loved music, especially the soft tones of the flute.	Ela também amava música, especialmente os tons suaves da flauta.
+One day, she met an old man who spoke only in math.	Um dia, ela conheceu um velho que falava apenas em matemática.
+He said numbers held the secrets of the universe.	Ele disse que os números continham os segredos do universo.
+Elena asked him about beliefs and why people hold them so strongly.	Elena perguntou a ele sobre as crenças e por que as pessoas as defendem com tanta força.
+The man replied, “Beliefs are the roots of emotion and identity.”	O homem respondeu: “As crenças são as raízes da emoção e da identidade.”
+They sat by the river and talked about emotions for hours.	Eles se sentaram à beira do rio e conversaram sobre emoções por horas.
+“Emotions shape our perception of the world,” he said.	“As emoções moldam nossa percepção do mundo,” disse ele.
+Elena believed in logic but respected the power of feelings.	Elena acreditava na lógica, mas respeitava o poder dos sentimentos.
+She once wrote a poem about the balance between logic and love.	Uma vez, ela escreveu um poema sobre o equilíbrio entre lógica e amor.
+Her dream was to live in a world where freedom was sacred.	Seu sonho era viver em um mundo onde a liberdade fosse sagrada.
+“Without freedom, there is no true consciousness,” she often said.	“Sem liberdade, não há verdadeira consciência,” ela costumava dizer.
+As she grew older, Elena became a teacher of philosophy.	Com o passar do tempo, Elena se tornou professora de filosofia.
+Her students listened carefully to her ideas about time and ethics.	Seus alunos ouviam atentamente suas ideias sobre o tempo e a ética.
+She taught that justice is not just a law, but a way of life.	Ela ensinava que a justiça não é apenas uma lei, mas um modo de vida.
+Elena’s words lived on, even after she was gone.	As palavras de Elena permaneceram, mesmo depois de sua partida.
 Love	Amor
-Time	Tiempo
-Fear	Miedo
-Justice	Justicia
-Knowledge	Conocimiento
+Time	Tempo
+Fear	Medo
+Justice	Justiça
+Knowledge	Conhecimento
 Culture	Cultura
 Music	Música
-Language	Lenguaje
-Math	Matemáticas
-Beliefs	Creencias
-Emotions	Emociones
+Language	Linguagem
+Math	Matemática
+Beliefs	Crenças
+Emotions	Emoções
 Ethics	Ética
 Logic	Lógica
-Freedom	Libertad
-Consciousness	Conciencia
+Freedom	Liberdade
+Consciousness	Consciência
 Philosopher	Filósofa
 Universe	Universo
-Identity	Identidad
-Perception	Percepción
-Teacher	Profesora
+Identity	Identidade
+Perception	Percepção
+Teacher	Professora
 
 
         `;
@@ -63,10 +62,10 @@ Teacher	Profesora
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+           words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 
