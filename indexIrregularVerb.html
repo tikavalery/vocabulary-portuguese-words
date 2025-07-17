@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+Indicative – Present
+English	Spanish
+I am	yo estoy
+you are (informal)	tú estás
+he/she/you (formal) is	él/ella/usted está
+we are	nosotros/nosotras estamos
+they/you all are	ellos/ellas/ustedes están
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I was	yo estuve
+you were (informal)	tú estuviste
+he/she/you (formal) was	él/ella/usted estuvo
+we were	nosotros/nosotras estuvimos
+they/you all were	ellos/ellas/ustedes estuvieron
+
+Indicative – Imperfect
+English	Spanish
+I was / used to be	yo estaba
+you were (informal)	tú estabas
+he/she/you (formal) was	él/ella/usted estaba
+we were	nosotros/nosotras estábamos
+they/you all were	ellos/ellas/ustedes estaban
+
+Indicative – Future
+English	Spanish
+I will be	yo estaré
+you will be (informal)	tú estarás
+he/she/you (formal) will be	él/ella/usted estará
+we will be	nosotros/nosotras estaremos
+they/you all will be	ellos/ellas/ustedes estarán
+
+Indicative – Conditional
+English	Spanish
+I would be	yo estaría
+you would be (informal)	tú estarías
+he/she/you (formal) would be	él/ella/usted estaría
+we would be	nosotros/nosotras estaríamos
+they/you all would be	ellos/ellas/ustedes estarían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have been	yo he estado
+you have been (informal)	tú has estado
+he/she/you (formal) has been	él/ella/usted ha estado
+we have been	nosotros/nosotras hemos estado
+they/you all have been	ellos/ellas/ustedes han estado
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had been	yo había estado
+you had been (informal)	tú habías estado
+he/she/you (formal) had been	él/ella/usted había estado
+we had been	nosotros/nosotras habíamos estado
+they/you all had been	ellos/ellas/ustedes habían estado
+
+Perfect – Future Perfect
+English	Spanish
+I will have been	yo habré estado
+you will have been (informal)	tú habrás estado
+he/she/you (formal) will have been	él/ella/usted habrá estado
+we will have been	nosotros/nosotras habremos estado
+they/you all will have been	ellos/ellas/ustedes habrán estado
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have been	yo habría estado
+you would have been (informal)	tú habrías estado
+he/she/you (formal) would have been	él/ella/usted habría estado
+we would have been	nosotros/nosotras habríamos estado
+they/you all would have been	ellos/ellas/ustedes habrían estado
+
+
+Indicative – Present
+English	Spanish
+I go / am going	yo voy
+you go (informal)	tú vas
+he/she/you (formal) goes	él/ella/usted va
+we go	nosotros/nosotras vamos
+they/you all go	ellos/ellas/ustedes van
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I went	yo fui
+you went (informal)	tú fuiste
+he/she/you (formal) went	él/ella/usted fue
+we went	nosotros/nosotras fuimos
+they/you all went	ellos/ellas/ustedes fueron
+
+Indicative – Imperfect
+English	Spanish
+I was going / used to go	yo iba
+you were going (informal)	tú ibas
+he/she/you (formal) was going	él/ella/usted iba
+we were going	nosotros/nosotras íbamos
+they/you all were going	ellos/ellas/ustedes iban
+
+Indicative – Future
+English	Spanish
+I will go	yo iré
+you will go (informal)	tú irás
+he/she/you (formal) will go	él/ella/usted irá
+we will go	nosotros/nosotras iremos
+they/you all will go	ellos/ellas/ustedes irán
+
+Indicative – Conditional
+English	Spanish
+I would go	yo iría
+you would go (informal)	tú irías
+he/she/you (formal) would go	él/ella/usted iría
+we would go	nosotros/nosotras iríamos
+they/you all would go	ellos/ellas/ustedes irían
+
+Perfect – Present Perfect
+English	Spanish
+I have gone	yo he ido
+you have gone (informal)	tú has ido
+he/she/you (formal) has gone	él/ella/usted ha ido
+we have gone	nosotros/nosotras hemos ido
+they/you all have gone	ellos/ellas/ustedes han ido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had gone	yo había ido
+you had gone (informal)	tú habías ido
+he/she/you (formal) had gone	él/ella/usted había ido
+we had gone	nosotros/nosotras habíamos ido
+they/you all had gone	ellos/ellas/ustedes habían ido
+
+Perfect – Future Perfect
+English	Spanish
+I will have gone	yo habré ido
+you will have gone (informal)	tú habrás ido
+he/she/you (formal) will have gone	él/ella/usted habrá ido
+we will have gone	nosotros/nosotras habremos ido
+they/you all will have gone	ellos/ellas/ustedes habrán ido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have gone	yo habría ido
+you would have gone (informal)	tú habrías ido
+he/she/you (formal) would have gone	él/ella/usted habría ido
+we would have gone	nosotros/nosotras habríamos ido
+they/you all would have gone	ellos/ellas/ustedes habrían ido
+
+Indicative – Present
+English	Spanish
+I am	yo soy
+you are (informal)	tú eres
+he/she/you (formal) is	él/ella/usted es
+we are	nosotros/nosotras somos
+they/you all are	ellos/ellas/ustedes son
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I was	yo fui
+you were (informal)	tú fuiste
+he/she/you (formal) was	él/ella/usted fue
+we were	nosotros/nosotras fuimos
+they/you all were	ellos/ellas/ustedes fueron
+
+Indicative – Imperfect
+English	Spanish
+I was / used to be	yo era
+you were (informal)	tú eras
+he/she/you (formal) was	él/ella/usted era
+we were	nosotros/nosotras éramos
+they/you all were	ellos/ellas/ustedes eran
+
+Indicative – Future
+English	Spanish
+I will be	yo seré
+you will be (informal)	tú serás
+he/she/you (formal) will be	él/ella/usted será
+we will be	nosotros/nosotras seremos
+they/you all will be	ellos/ellas/ustedes serán
+
+Indicative – Conditional
+English	Spanish
+I would be	yo sería
+you would be (informal)	tú serías
+he/she/you (formal) would be	él/ella/usted sería
+we would be	nosotros/nosotras seríamos
+they/you all would be	ellos/ellas/ustedes serían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have been	yo he sido
+you have been (informal)	tú has sido
+he/she/you (formal) has been	él/ella/usted ha sido
+we have been	nosotros/nosotras hemos sido
+they/you all have been	ellos/ellas/ustedes han sido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had been	yo había sido
+you had been (informal)	tú habías sido
+he/she/you (formal) had been	él/ella/usted había sido
+we had been	nosotros/nosotras habíamos sido
+they/you all had been	ellos/ellas/ustedes habían sido
+
+Perfect – Future Perfect
+English	Spanish
+I will have been	yo habré sido
+you will have been (informal)	tú habrás sido
+he/she/you (formal) will have been	él/ella/usted habrá sido
+we will have been	nosotros/nosotras habremos sido
+they/you all will have been	ellos/ellas/ustedes habrán sido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have been	yo habría sido
+you would have been (informal)	tú habrías sido
+he/she/you (formal) would have been	él/ella/usted habría sido
+we would have been	nosotros/nosotras habríamos sido
+they/you all would have been	ellos/ellas/ustedes habrían sido
+
+Indicative – Present
+English	Spanish
+I can / am able to	yo puedo
+you can (informal)	tú puedes
+he/she/you (formal) can	él/ella/usted puede
+we can	nosotros/nosotras podemos
+they/you all can	ellos/ellas/ustedes pueden
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I could / was able to	yo pude
+you could (informal)	tú pudiste
+he/she/you (formal) could	él/ella/usted pudo
+we could	nosotros/nosotras pudimos
+they/you all could	ellos/ellas/ustedes pudieron
+
+Indicative – Imperfect
+English	Spanish
+I was able to / used to be able to	yo podía
+you were able to (informal)	tú podías
+he/she/you (formal) was able to	él/ella/usted podía
+we were able to	nosotros/nosotras podíamos
+they/you all were able to	ellos/ellas/ustedes podían
+
+Indicative – Future
+English	Spanish
+I will be able to	yo podré
+you will be able to (informal)	tú podrás
+he/she/you (formal) will be able to	él/ella/usted podrá
+we will be able to	nosotros/nosotras podremos
+they/you all will be able to	ellos/ellas/ustedes podrán
+
+Indicative – Conditional
+English	Spanish
+I would be able to	yo podría
+you would be able to (informal)	tú podrías
+he/she/you (formal) would be able to	él/ella/usted podría
+we would be able to	nosotros/nosotras podríamos
+they/you all would be able to	ellos/ellas/ustedes podrían
+
+Perfect – Present Perfect
+English	Spanish
+I have been able to	yo he podido
+you have been able to (informal)	tú has podido
+he/she/you (formal) has been able to	él/ella/usted ha podido
+we have been able to	nosotros/nosotras hemos podido
+they/you all have been able to	ellos/ellas/ustedes han podido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had been able to	yo había podido
+you had been able to (informal)	tú habías podido
+he/she/you (formal) had been able to	él/ella/usted había podido
+we had been able to	nosotros/nosotras habíamos podido
+they/you all had been able to	ellos/ellas/ustedes habían podido
+
+Perfect – Future Perfect
+English	Spanish
+I will have been able to	yo habré podido
+you will have been able to (informal)	tú habrás podido
+he/she/you will have been able to	él/ella/usted habrá podido
+we will have been able to	nosotros/nosotras habremos podido
+they/you all will have been able to	ellos/ellas/ustedes habrán podido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have been able to	yo habría podido
+you would have been able to (informal)	tú habrías podido
+he/she/you would have been able to	él/ella/usted habría podido
+we would have been able to	nosotros/nosotras habríamos podido
+they/you all would have been able to	ellos/ellas/ustedes habrían podido
+
+Indicative – Present
+English	Spanish
+I want / love	yo quiero
+you want / love (informal)	tú quieres
+he/she/you (formal) wants / loves	él/ella/usted quiere
+we want / love	nosotros/nosotras queremos
+they/you all want / love	ellos/ellas/ustedes quieren
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I wanted	yo quise
+you wanted (informal)	tú quisiste
+he/she/you (formal) wanted	él/ella/usted quiso
+we wanted	nosotros/nosotras quisimos
+they/you all wanted	ellos/ellas/ustedes quisieron
+
+Indicative – Imperfect
+English	Spanish
+I used to want / love	yo quería
+you used to want / love	tú querías
+he/she/you used to want / love	él/ella/usted quería
+we used to want / love	nosotros/nosotras queríamos
+they/you all used to want / love	ellos/ellas/ustedes querían
+
+Indicative – Future
+English	Spanish
+I will want	yo querré
+you will want (informal)	tú querrás
+he/she/you (formal) will want	él/ella/usted querrá
+we will want	nosotros/nosotras querremos
+they/you all will want	ellos/ellas/ustedes querrán
+
+Indicative – Conditional
+English	Spanish
+I would want	yo querría
+you would want (informal)	tú querrías
+he/she/you (formal) would want	él/ella/usted querría
+we would want	nosotros/nosotras querríamos
+they/you all would want	ellos/ellas/ustedes querrían
+
+Perfect – Present Perfect
+English	Spanish
+I have wanted	yo he querido
+you have wanted (informal)	tú has querido
+he/she/you (formal) has wanted	él/ella/usted ha querido
+we have wanted	nosotros/nosotras hemos querido
+they/you all have wanted	ellos/ellas/ustedes han querido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had wanted	yo había querido
+you had wanted (informal)	tú habías querido
+he/she/you had wanted	él/ella/usted había querido
+we had wanted	nosotros/nosotras habíamos querido
+they/you all had wanted	ellos/ellas/ustedes habían querido
+
+Perfect – Future Perfect
+English	Spanish
+I will have wanted	yo habré querido
+you will have wanted (informal)	tú habrás querido
+he/she/you will have wanted	él/ella/usted habrá querido
+we will have wanted	nosotros/nosotras habremos querido
+they/you all will have wanted	ellos/ellas/ustedes habrán querido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have wanted	yo habría querido
+you would have wanted (informal)	tú habrías querido
+he/she/you would have wanted	él/ella/usted habría querido
+we would have wanted	nosotros/nosotras habríamos querido
+they/you all would have wanted	ellos/ellas/ustedes habrían querido
+
+
+Indicative – Present
+English	Spanish
+I come	yo vengo
+you come (informal)	tú vienes
+he/she/you (formal) comes	él/ella/usted viene
+we come	nosotros/nosotras venimos
+they/you all come	ellos/ellas/ustedes vienen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I came	yo vine
+you came (informal)	tú viniste
+he/she/you (formal) came	él/ella/usted vino
+we came	nosotros/nosotras vinimos
+they/you all came	ellos/ellas/ustedes vinieron
+
+Indicative – Imperfect
+English	Spanish
+I used to come / was coming	yo venía
+you used to come (informal)	tú venías
+he/she/you (formal) used to come	él/ella/usted venía
+we used to come	nosotros/nosotras veníamos
+they/you all used to come	ellos/ellas/ustedes venían
+
+Indicative – Future
+English	Spanish
+I will come	yo vendré
+you will come (informal)	tú vendrás
+he/she/you (formal) will come	él/ella/usted vendrá
+we will come	nosotros/nosotras vendremos
+they/you all will come	ellos/ellas/ustedes vendrán
+
+Indicative – Conditional
+English	Spanish
+I would come	yo vendría
+you would come (informal)	tú vendrías
+he/she/you (formal) would come	él/ella/usted vendría
+we would come	nosotros/nosotras vendríamos
+they/you all would come	ellos/ellas/ustedes vendrían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have come	yo he venido
+you have come (informal)	tú has venido
+he/she/you (formal) has come	él/ella/usted ha venido
+we have come	nosotros/nosotras hemos venido
+they/you all have come	ellos/ellas/ustedes han venido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had come	yo había venido
+you had come (informal)	tú habías venido
+he/she/you had come	él/ella/usted había venido
+we had come	nosotros/nosotras habíamos venido
+they/you all had come	ellos/ellas/ustedes habían venido
+
+Perfect – Future Perfect
+English	Spanish
+I will have come	yo habré venido
+you will have come (informal)	tú habrás venido
+he/she/you will have come	él/ella/usted habrá venido
+we will have come	nosotros/nosotras habremos venido
+they/you all will have come	ellos/ellas/ustedes habrán venido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have come	yo habría venido
+you would have come (informal)	tú habrías venido
+he/she/you would have come	él/ella/usted habría venido
+we would have come	nosotros/nosotras habríamos venido
+they/you all would have come	ellos/ellas/ustedes habrían venido
+
+Indicative – Present
+English	Spanish
+I say / tell	yo digo
+you say / tell (informal)	tú dices
+he/she/you (formal) says / tells	él/ella/usted dice
+we say / tell	nosotros/nosotras decimos
+they/you all say / tell	ellos/ellas/ustedes dicen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I said / told	yo dije
+you said / told (informal)	tú dijiste
+he/she/you said / told	él/ella/usted dijo
+we said / told	nosotros/nosotras dijimos
+they/you all said / told	ellos/ellas/ustedes dijeron
+
+Indicative – Imperfect
+English	Spanish
+I used to say / was saying	yo decía
+you used to say / were saying	tú decías
+he/she/you used to say / was saying	él/ella/usted decía
+we used to say / were saying	nosotros/nosotras decíamos
+they/you all used to say / were saying	ellos/ellas/ustedes decían
+
+Indicative – Future
+English	Spanish
+I will say / tell	yo diré
+you will say / tell (informal)	tú dirás
+he/she/you will say / tell	él/ella/usted dirá
+we will say / tell	nosotros/nosotras diremos
+they/you all will say / tell	ellos/ellas/ustedes dirán
+
+Indicative – Conditional
+English	Spanish
+I would say / tell	yo diría
+you would say / tell (informal)	tú dirías
+he/she/you would say / tell	él/ella/usted diría
+we would say / tell	nosotros/nosotras diríamos
+they/you all would say / tell	ellos/ellas/ustedes dirían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have said / told	yo he dicho
+you have said / told (informal)	tú has dicho
+he/she/you has said / told	él/ella/usted ha dicho
+we have said / told	nosotros/nosotras hemos dicho
+they/you all have said / told	ellos/ellas/ustedes han dicho
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had said / told	yo había dicho
+you had said / told (informal)	tú habías dicho
+he/she/you had said / told	él/ella/usted había dicho
+we had said / told	nosotros/nosotras habíamos dicho
+they/you all had said / told	ellos/ellas/ustedes habían dicho
+
+Perfect – Future Perfect
+English	Spanish
+I will have said / told	yo habré dicho
+you will have said / told (informal)	tú habrás dicho
+he/she/you will have said / told	él/ella/usted habrá dicho
+we will have said / told	nosotros/nosotras habremos dicho
+they/you all will have said / told	ellos/ellas/ustedes habrán dicho
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have said / told	yo habría dicho
+you would have said / told	tú habrías dicho
+he/she/you would have said / told	él/ella/usted habría dicho
+we would have said / told	nosotros/nosotras habríamos dicho
+they/you all would have said / told	ellos/ellas/ustedes habrían dicho
+
+
+Indicative – Present
+English	Spanish
+I do / make	yo hago
+you do / make (informal)	tú haces
+he/she/you (formal) does / makes	él/ella/usted hace
+we do / make	nosotros/nosotras hacemos
+they/you all do / make	ellos/ellas/ustedes hacen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I did / made	yo hice
+you did / made (informal)	tú hiciste
+he/she/you did / made	él/ella/usted hizo
+we did / made	nosotros/nosotras hicimos
+they/you all did / made	ellos/ellas/ustedes hicieron
+
+Indicative – Imperfect
+English	Spanish
+I used to do / was doing; used to make	yo hacía
+you used to do / were doing (informal)	tú hacías
+he/she/you used to do / was doing	él/ella/usted hacía
+we used to do / were doing	nosotros/nosotras hacíamos
+they/you all used to do / were doing	ellos/ellas/ustedes hacían
+
+Indicative – Future
+English	Spanish
+I will do / make	yo haré
+you will do / make (informal)	tú harás
+he/she/you will do / make	él/ella/usted hará
+we will do / make	nosotros/nosotras haremos
+they/you all will do / make	ellos/ellas/ustedes harán
+
+Indicative – Conditional
+English	Spanish
+I would do / make	yo haría
+you would do / make (informal)	tú harías
+he/she/you would do / make	él/ella/usted haría
+we would do / make	nosotros/nosotras haríamos
+they/you all would do / make	ellos/ellas/ustedes harían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have done / made	yo he hecho
+you have done / made (informal)	tú has hecho
+he/she/you have done / made	él/ella/usted ha hecho
+we have done / made	nosotros/nosotras hemos hecho
+they/you all have done / made	ellos/ellas/ustedes han hecho
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had done / made	yo había hecho
+you had done / made (informal)	tú habías hecho
+he/she/you had done / made	él/ella/usted había hecho
+we had done / made	nosotros/nosotras habíamos hecho
+they/you all had done / made	ellos/ellas/ustedes habían hecho
+
+Perfect – Future Perfect
+English	Spanish
+I will have done / made	yo habré hecho
+you will have done / made	tú habrás hecho
+he/she/you will have done / made	él/ella/usted habrá hecho
+we will have done / made	nosotros/nosotras habremos hecho
+they/you all will have done / made	ellos/ellas/ustedes habrán hecho
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have done / made	yo habría hecho
+you would have done / made	tú habrías hecho
+he/she/you would have done / made	él/ella/usted habría hecho
+we would have done / made	nosotros/nosotras habríamos hecho
+they/you all would have done / made	ellos/ellas/ustedes habrían hecho
+
+Indicative – Present
+English	Spanish
+I put	yo pongo
+you put (informal)	tú pones
+he/she/you (formal) puts	él/ella/usted pone
+we put	nosotros/nosotras ponemos
+they/you all put	ellos/ellas/ustedes ponen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I put (past)	yo puse
+you put (past, informal)	tú pusiste
+he/she/you put (past)	él/ella/usted puso
+we put (past)	nosotros/nosotras pusimos
+they/you all put (past)	ellos/ellas/ustedes pusieron
+
+Indicative – Imperfect
+English	Spanish
+I used to put / was putting	yo ponía
+you used to put / were putting	tú ponías
+he/she/you used to put / was putting	él/ella/usted ponía
+we used to put / were putting	nosotros/nosotras poníamos
+they/you all used to put / were putting	ellos/ellas/ustedes ponían
+
+Indicative – Future
+English	Spanish
+I will put	yo pondré
+you will put (informal)	tú pondrás
+he/she/you will put	él/ella/usted pondrá
+we will put	nosotros/nosotras pondremos
+they/you all will put	ellos/ellas/ustedes pondrán
+
+Indicative – Conditional
+English	Spanish
+I would put	yo pondría
+you would put (informal)	tú pondrías
+he/she/you would put	él/ella/usted pondría
+we would put	nosotros/nosotras pondríamos
+they/you all would put	ellos/ellas/ustedes pondrían
+
+Perfect – Present Perfect
+English	Spanish
+I have put	yo he puesto
+you have put (informal)	tú has puesto
+he/she/you has put	él/ella/usted ha puesto
+we have put	nosotros/nosotras hemos puesto
+they/you all have put	ellos/ellas/ustedes han puesto
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had put	yo había puesto
+you had put (informal)	tú habías puesto
+he/she/you had put	él/ella/usted había puesto
+we had put	nosotros/nosotras habíamos puesto
+they/you all had put	ellos/ellas/ustedes habían puesto
+
+Perfect – Future Perfect
+English	Spanish
+I will have put	yo habré puesto
+you will have put (informal)	tú habrás puesto
+he/she/you will have put	él/ella/usted habrá puesto
+we will have put	nosotros/nosotras habremos puesto
+they/you all will have put	ellos/ellas/ustedes habrán puesto
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have put	yo habría puesto
+you would have put (informal)	tú habrías puesto
+he/she/you would have put	él/ella/usted habría puesto
+we would have put	nosotros/nosotras habríamos puesto
+they/you all would have put	ellos/ellas/ustedes habrían puesto
+
+Indicative – Present
+English	Spanish
+I fall	yo caigo
+you fall (informal)	tú caes
+he/she/you fall	él/ella/usted cae
+we fall	nosotros/nosotras caemos
+they/you all fall	ellos/ellas/ustedes caen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I fell	yo caí
+you fell (informal)	tú caíste
+he/she/you fell	él/ella/usted cayó
+we fell	nosotros/nosotras caímos
+they/you all fell	ellos/ellas/ustedes cayeron
+
+Indicative – Imperfect
+English	Spanish
+I used to fall / was falling	yo caía
+you used to fall / were falling	tú caías
+he/she/you used to fall / was falling	él/ella/usted caía
+we used to fall / were falling	nosotros/nosotras caíamos
+they/you all used to fall / were falling	ellos/ellas/ustedes caían
+
+Indicative – Future
+English	Spanish
+I will fall	yo caeré
+you will fall (informal)	tú caerás
+he/she/you will fall	él/ella/usted caerá
+we will fall	nosotros/nosotras caeremos
+they/you all will fall	ellos/ellas/ustedes caerán
+
+Indicative – Conditional
+English	Spanish
+I would fall	yo caería
+you would fall (informal)	tú caerías
+he/she/you would fall	él/ella/usted caería
+we would fall	nosotros/nosotras caeríamos
+they/you all would fall	ellos/ellas/ustedes caerían
+
+Perfect – Present Perfect
+English	Spanish
+I have fallen	yo he caído
+you have fallen (informal)	tú has caído
+he/she/you have fallen	él/ella/usted ha caído
+we have fallen	nosotros/nosotras hemos caído
+they/you all have fallen	ellos/ellas/ustedes han caído
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had fallen	yo había caído
+you had fallen (informal)	tú habías caído
+he/she/you had fallen	él/ella/usted había caído
+we had fallen	nosotros/nosotras habíamos caído
+they/you all had fallen	ellos/ellas/ustedes habían caído
+
+Perfect – Future Perfect
+English	Spanish
+I will have fallen	yo habré caído
+you will have fallen (informal)	tú habrás caído
+he/she/you will have fallen	él/ella/usted habrá caído
+we will have fallen	nosotros/nosotras habremos caído
+they/you all will have fallen	ellos/ellas/ustedes habrán caído
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have fallen	yo habría caído
+you would have fallen (informal)	tú habrías caído
+he/she/you would have fallen	él/ella/usted habría caído
+we would have fallen	nosotros/nosotras habríamos caído
+they/you all would have fallen	ellos/ellas/ustedes habrían caído
+
+Indicative – Present
+English	Spanish
+I go out / leave	yo salgo
+you go out / leave (informal)	tú sales
+he/she/you go(es) out / leave(s)	él/ella/usted sale
+we go out / leave	nosotros/nosotras salimos
+they/you all go out / leave	ellos/ellas/ustedes salen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I went out / left	yo salí
+you went out / left (informal)	tú saliste
+he/she/you went out / left	él/ella/usted salió
+we went out / left	nosotros/nosotras salimos
+they/you all went out / left	ellos/ellas/ustedes salieron
+
+Indicative – Imperfect
+English	Spanish
+I used to go out / was leaving	yo salía
+you used to go out / were leaving	tú salías
+he/she/you used to go out / was leaving	él/ella/usted salía
+we used to go out / were leaving	nosotros/nosotras salíamos
+they/you all used to go out / were leaving	ellos/ellas/ustedes salían
+
+Indicative – Future
+English	Spanish
+I will go out / leave	yo saldré
+you will go out / leave	tú saldrás
+he/she/you will go out / leave	él/ella/usted saldrá
+we will go out / leave	nosotros/nosotras saldremos
+they/you all will go out / leave	ellos/ellas/ustedes saldrán
+
+Indicative – Conditional
+English	Spanish
+I would go out / leave	yo saldría
+you would go out / leave	tú saldrías
+he/she/you would go out / leave	él/ella/usted saldría
+we would go out / leave	nosotros/nosotras saldríamos
+they/you all would go out / leave	ellos/ellas/ustedes saldrían
+
+Perfect – Present Perfect
+English	Spanish
+I have gone out / left	yo he salido
+you have gone out / left	tú has salido
+he/she/you has gone out / left	él/ella/usted ha salido
+we have gone out / left	nosotros/nosotras hemos salido
+they/you all have gone out / left	ellos/ellas/ustedes han salido
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had gone out / left	yo había salido
+you had gone out / left	tú habías salido
+he/she/you had gone out / left	él/ella/usted había salido
+we had gone out / left	nosotros/nosotras habíamos salido
+they/you all had gone out / left	ellos/ellas/ustedes habían salido
+
+Perfect – Future Perfect
+English	Spanish
+I will have gone out / left	yo habré salido
+you will have gone out / left	tú habrás salido
+he/she/you will have gone out / left	él/ella/usted habrá salido
+we will have gone out / left	nosotros/nosotras habremos salido
+they/you all will have gone out / left	ellos/ellas/ustedes habrán salido
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have gone out / left	yo habría salido
+you would have gone out / left	tú habrías salido
+he/she/you would have gone out / left	él/ella/usted habría salido
+we would have gone out / left	nosotros/nosotras habríamos salido
+they/you all would have gone out / left	ellos/ellas/ustedes habrían salido
+
+Indicative – Present
+English	Spanish
+I touch / play	yo toco
+you touch / play (informal)	tú tocas
+he/she/you touch(es) / play(s)	él/ella/usted toca
+we touch / play	nosotros/nosotras tocamos
+they/you all touch / play	ellos/ellas/ustedes tocan
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I touched / played	yo toqué
+you touched / played (informal)	tú tocaste
+he/she/you touched / played	él/ella/usted tocó
+we touched / played	nosotros/nosotras tocamos
+they/you all touched / played	ellos/ellas/ustedes tocaron
+
+Indicative – Imperfect
+English	Spanish
+I used to touch / was playing	yo tocaba
+you used to touch / were playing (informal)	tú tocabas
+he/she/you used to touch / was playing	él/ella/usted tocaba
+we used to touch / were playing	nosotros/nosotras tocábamos
+they/you all used to touch / were playing	ellos/ellas/ustedes tocaban
+
+Indicative – Future
+English	Spanish
+I will touch / play	yo tocaré
+you will touch / play (informal)	tú tocarás
+he/she/you will touch / play	él/ella/usted tocará
+we will touch / play	nosotros/nosotras tocaremos
+they/you all will touch / play	ellos/ellas/ustedes tocarán
+
+Indicative – Conditional
+English	Spanish
+I would touch / play	yo tocaría
+you would touch / play (informal)	tú tocarías
+he/she/you would touch / play	él/ella/usted tocaría
+we would touch / play	nosotros/nosotras tocaríamos
+they/you all would touch / play	ellos/ellas/ustedes tocarían
+
+
+Perfect – Present Perfect
+English	Spanish
+I have touched / played	yo he tocado
+you have touched / played (informal)	tú has tocado
+he/she/you have touched / played	él/ella/usted ha tocado
+we have touched / played	nosotros/nosotras hemos tocado
+they/you all have touched / played	ellos/ellas/ustedes han tocado
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had touched / played	yo había tocado
+you had touched / played (informal)	tú habías tocado
+he/she/you had touched / played	él/ella/usted había tocado
+we had touched / played	nosotros/nosotras habíamos tocado
+they/you all had touched / played	ellos/ellas/ustedes habían tocado
+
+Perfect – Future Perfect
+English	Spanish
+I will have touched / played	yo habré tocado
+you will have touched / played (informal)	tú habrás tocado
+he/she/you will have touched / played	él/ella/usted habrá tocado
+we will have touched / played	nosotros/nosotras habremos tocado
+they/you all will have touched / played	ellos/ellas/ustedes habrán tocado
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have touched / played	yo habría tocado
+you would have touched / played (informal)	tú habrías tocado
+he/she/you would have touched / played	él/ella/usted habría tocado
+we would have touched / played	nosotros/nosotras habríamos tocado
+they/you all would have touched / played	ellos/ellas/ustedes habrían tocado
+
+Indicative – Present
+English	Spanish
+I bring	yo traigo
+you bring (informal)	tú traes
+he/she/you bring(s)	él/ella/usted trae
+we bring	nosotros/nosotras traemos
+they/you all bring	ellos/ellas/ustedes traen
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I brought	yo traje
+you brought (informal)	tú trajiste
+he/she/you brought	él/ella/usted trajo
+we brought	nosotros/nosotras trajimos
+they/you all brought	ellos/ellas/ustedes trajeron
+
+Indicative – Imperfect
+English	Spanish
+I used to bring / was bringing	yo traía
+you used to bring / were bringing (informal)	tú traías
+he/she/you used to bring / was bringing	él/ella/usted traía
+we used to bring / were bringing	nosotros/nosotras traíamos
+they/you all used to bring / were bringing	ellos/ellas/ustedes traían
+
+Indicative – Future
+English	Spanish
+I will bring	yo traeré
+you will bring (informal)	tú traerás
+he/she/you will bring	él/ella/usted traerá
+we will bring	nosotros/nosotras traeremos
+they/you all will bring	ellos/ellas/ustedes traerán
+
+Indicative – Conditional
+English	Spanish
+I would bring	yo traería
+you would bring (informal)	tú traerías
+he/she/you would bring	él/ella/usted traería
+we would bring	nosotros/nosotras traeríamos
+they/you all would bring	ellos/ellas/ustedes traerían
+
+Perfect – Present Perfect
+English	Spanish
+I have brought	yo he traído
+you have brought (informal)	tú has traído
+he/she/you have brought	él/ella/usted ha traído
+we have brought	nosotros/nosotras hemos traído
+they/you all have brought	ellos/ellas/ustedes han traído
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had brought	yo había traído
+you had brought (informal)	tú habías traído
+he/she/you had brought	él/ella/usted había traído
+we had brought	nosotros/nosotras habíamos traído
+they/you all had brought	ellos/ellas/ustedes habían traído
+
+Perfect – Future Perfect
+English	Spanish
+I will have brought	yo habré traído
+you will have brought (informal)	tú habrás traído
+he/she/you will have brought	él/ella/usted habrá traído
+we will have brought	nosotros/nosotras habremos traído
+they/you all will have brought	ellos/ellas/ustedes habrán traído
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have brought	yo habría traído
+you would have brought (informal)	tú habrías traído
+he/she/you would have brought	él/ella/usted habría traído
+we would have brought	nosotros/nosotras habríamos traído
+they/you all would have brought	ellos/ellas/ustedes habrían traído
+
+Indicative – Present
+English	Spanish
+I give	yo doy
+you give (informal)	tú das
+he/she/you give(s)	él/ella/usted da
+we give	nosotros/nosotras damos
+they/you all give	ellos/ellas/ustedes dan
+
+Indicative – Preterite (Simple Past)
+English	Spanish
+I gave	yo di
+you gave (informal)	tú diste
+he/she/you gave	él/ella/usted dio
+we gave	nosotros/nosotras dimos
+they/you all gave	ellos/ellas/ustedes dieron
+
+Indicative – Imperfect
+English	Spanish
+I used to give / was giving	yo daba
+you used to give / were giving (informal)	tú dabas
+he/she/you used to give / was giving	él/ella/usted daba
+we used to give / were giving	nosotros/nosotras dábamos
+they/you all used to give / were giving	ellos/ellas/ustedes daban
+
+Indicative – Future
+English	Spanish
+I will give	yo daré
+you will give (informal)	tú darás
+he/she/you will give	él/ella/usted dará
+we will give	nosotros/nosotras daremos
+they/you all will give	ellos/ellas/ustedes darán
+
+Indicative – Conditional
+English	Spanish
+I would give	yo daría
+you would give (informal)	tú darías
+he/she/you would give	él/ella/usted daría
+we would give	nosotros/nosotras daríamos
+they/you all would give	ellos/ellas/ustedes darían
+
+Perfect – Present Perfect
+English	Spanish
+I have given	yo he dado
+you have given (informal)	tú has dado
+he/she/you have given	él/ella/usted ha dado
+we have given	nosotros/nosotras hemos dado
+they/you all have given	ellos/ellas/ustedes han dado
+
+Perfect – Past Perfect (Pluperfect)
+English	Spanish
+I had given	yo había dado
+you had given (informal)	tú habías dado
+he/she/you had given	él/ella/usted había dado
+we had given	nosotros/nosotras habíamos dado
+they/you all had given	ellos/ellas/ustedes habían dado
+
+Perfect – Future Perfect
+English	Spanish
+I will have given	yo habré dado
+you will have given (informal)	tú habrás dado
+he/she/you will have given	él/ella/usted habrá dado
+we will have given	nosotros/nosotras habremos dado
+they/you all will have given	ellos/ellas/ustedes habrán dado
+
+Perfect – Conditional Perfect
+English	Spanish
+I would have given	yo habría dado
+you would have given (informal)	tú habrías dado
+he/she/you would have given	él/ella/usted habría dado
+we would have given	nosotros/nosotras habríamos dado
+they/you all would have given	ellos/ellas/ustedes habrían dado
+
+1. Simple Tenses
+Present – Presente
+English	Spanish
+I have	yo tengo
+you have	tú tienes
+he/she has	él/ella tiene
+we have	nosotros tenemos
+you (all) have	ustedes tienen
+they have	ellos/ellas tienen
+
+Preterite – Pretérito
+English	Spanish
+I had	yo tuve
+you had	tú tuviste
+he/she had	él/ella tuvo
+we had	nosotros tuvimos
+you (all) had	ustedes tuvieron
+they had	ellos/ellas tuvieron
+
+Imperfect – Imperfecto
+English	Spanish
+I used to have / was having	yo tenía
+you used to have	tú tenías
+he/she used to have	él/ella tenía
+we used to have	nosotros teníamos
+you (all) used to have	ustedes tenían
+they used to have	ellos/ellas tenían
+
+Future – Futuro
+English	Spanish
+I will have	yo tendré
+you will have	tú tendrás
+he/she will have	él/ella tendrá
+we will have	nosotros tendremos
+you (all) will have	ustedes tendrán
+they will have	ellos/ellas tendrán
+
+Conditional – Condicional
+English	Spanish
+I would have	yo tendría
+you would have	tú tendrías
+he/she would have	él/ella tendría
+we would have	nosotros tendríamos
+you (all) would have	ustedes tendrían
+they would have	ellos/ellas tendrían
+
+3. Perfect (Compound) Tenses
+Present Perfect – Pretérito Perfecto
+English	Spanish
+I have had	yo he tenido
+you have had	tú has tenido
+he/she has had	él/ella ha tenido
+we have had	nosotros hemos tenido
+you (all) have had	ustedes han tenido
+they have had	ellos/ellas han tenido
+
+Past Perfect – Pluscuamperfecto
+English	Spanish
+I had had	yo había tenido
+you had had	tú habías tenido
+he/she had had	él/ella había tenido
+we had had	nosotros habíamos tenido
+you (all) had had	ustedes habían tenido
+they had had	ellos/ellas habían tenido
+
+Future Perfect – Futuro Perfecto
+English	Spanish
+I will have had	yo habré tenido
+you will have had	tú habrás tenido
+he/she will have had	él/ella habrá tenido
+we will have had	nosotros habremos tenido
+you (all) will have had	ustedes habrán tenido
+they will have had	ellos/ellas habrán tenido
+
+Conditional Perfect – Condicional Perfecto
+English	Spanish
+I would have had	yo habría tenido
+you would have had	tú habrías tenido
+he/she would have had	él/ella habría tenido
+we would have had	nosotros habríamos tenido
+you (all) would have had	ustedes habrían tenido
+they would have had	ellos/ellas habrían tenido
+
+✅ 1. Simple Tenses
+Present – Presente
+English	Spanish
+I have (auxiliary)	yo he
+you have	tú has
+he/she has	él/ella ha
+we have	nosotros hemos
+you (all) have	ustedes han
+they have	ellos/ellas han
+
+Preterite – Pretérito
+English	Spanish
+I had	yo hube
+you had	tú hubiste
+he/she had	él/ella hubo
+we had	nosotros hubimos
+you (all) had	ustedes hubieron
+they had	ellos/ellas hubieron
+
+Imperfect – Imperfecto
+English	Spanish
+I used to have	yo había
+you used to have	tú habías
+he/she used to have	él/ella había
+we used to have	nosotros habíamos
+you (all) used to have	ustedes habían
+they used to have	ellos/ellas habían
+
+Future – Futuro
+English	Spanish
+I will have	yo habré
+you will have	tú habrás
+he/she will have	él/ella habrá
+we will have	nosotros habremos
+you (all) will have	ustedes habrán
+they will have	ellos/ellas habrán
+
+Conditional – Condicional
+English	Spanish
+I would have	yo habría
+you would have	tú habrías
+he/she would have	él/ella habría
+we would have	nosotros habríamos
+you (all) would have	ustedes habrían
+they would have	ellos/ellas habrían
+
+
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            utterance.rate = 0.8; 
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+ Present (Indicative)
+English	Spanish
+I live	yo vivo
+You live	tú vives
+He/She/You live	él/ella/usted vive
+We live	nosotros vivimos
+They/You all live	ellos/ustedes viven
+
+Preterite (Simple Past)
+English	Spanish
+I lived	yo viví
+You lived	tú viviste
+He/She/You lived	él/ella/usted vivió
+We lived	nosotros vivimos
+They/You all lived	ellos/ustedes vivieron
+
+Imperfect (Past Habitual)
+English	Spanish
+I used to live / was living	yo vivía
+You used to live	tú vivías
+He/She/You used to live	él/ella/usted vivía
+We used to live	nosotros vivíamos
+They/You all used to live	ellos/ustedes vivían
+
+Future
+English	Spanish
+I will live	yo viviré
+You will live	tú vivirás
+He/She/You will live	él/ella/usted vivirá
+We will live	nosotros viviremos
+They/You all will live	ellos/ustedes vivirán
+
+Conditional
+English	Spanish
+I would live	yo viviría
+You would live	tú vivirías
+He/She/You would live	él/ella/usted viviría
+We would live	nosotros viviríamos
+They/You all would live	ellos/ustedes vivirían
+
+ Present Perfect
+English	Spanish
+I have lived	yo he vivido
+You have lived	tú has vivido
+He/She/You have lived	él/ella/usted ha vivido
+We have lived	nosotros hemos vivido
+They/You all have lived	ellos/ustedes han vivido
+
+Past Perfect (Pluperfect)
+English	Spanish
+I had lived	yo había vivido
+You had lived	tú habías vivido
+He/She/You had lived	él/ella/usted había vivido
+We had lived	nosotros habíamos vivido
+They/You all had lived	ellos/ustedes habían vivido
+
+Future Perfect
+English	Spanish
+I will have lived	yo habré vivido
+You will have lived	tú habrás vivido
+He/She/You will have lived	él/ella/usted habrá vivido
+We will have lived	nosotros habremos vivido
+They/You all will have lived	ellos/ustedes habrán vivido
+
+Conditional Perfect
+English	Spanish
+I would have lived	yo habría vivido
+You would have lived	tú habrías vivido
+He/She/You would have lived	él/ella/usted habría vivido
+We would have lived	nosotros habríamos vivido
+They/You all would have lived	ellos/ustedes habrían vivido
+
+Present (Indicative)
+English	Spanish
+I write	yo escribo
+You write	tú escribes
+He/She/You write	él/ella/usted escribe
+We write	nosotros escribimos
+They/You all write	ellos/ustedes escriben
+
+Preterite (Simple Past)
+English	Spanish
+I wrote	yo escribí
+You wrote	tú escribiste
+He/She/You wrote	él/ella/usted escribió
+We wrote	nosotros escribimos
+They/You all wrote	ellos/ustedes escribieron
+
+Imperfect (Past Habitual)
+English	Spanish
+I used to write / was writing	yo escribía
+You used to write	tú escribías
+He/She/You used to write	él/ella/usted escribía
+We used to write	nosotros escribíamos
+They/You all used to write	ellos/ustedes escribían
+
+Future
+English	Spanish
+I will write	yo escribiré
+You will write	tú escribirás
+He/She/You will write	él/ella/usted escribirá
+We will write	nosotros escribiremos
+They/You all will write	ellos/ustedes escribirán
+
+Conditional
+English	Spanish
+I would write	yo escribiría
+You would write	tú escribirías
+He/She/You would write	él/ella/usted escribiría
+We would write	nosotros escribiríamos
+They/You all would write	ellos/ustedes escribirían
+
+
+Present Perfect
+English	Spanish
+I have written	yo he escrito
+You have written	tú has escrito
+He/She/You have written	él/ella/usted ha escrito
+We have written	nosotros hemos escrito
+They/You all have written	ellos/ustedes han escrito
+
+Past Perfect (Pluperfect)
+English	Spanish
+I had written	yo había escrito
+You had written	tú habías escrito
+He/She/You had written	él/ella/usted había escrito
+We had written	nosotros habíamos escrito
+They/You all had written	ellos/ustedes habían escrito
+
+Future Perfect
+English	Spanish
+I will have written	yo habré escrito
+You will have written	tú habrás escrito
+He/She/You will have written	él/ella/usted habrá escrito
+We will have written	nosotros habremos escrito
+They/You all will have written	ellos/ustedes habrán escrito
+
+Conditional Perfect
+English	Spanish
+I would have written	yo habría escrito
+You would have written	tú habrías escrito
+He/She/You would have written	él/ella/usted habría escrito
+We would have written	nosotros habríamos escrito
+They/You all would have written	ellos/ustedes habrían escrito
+
+
+Present (Indicative)
+English	Spanish
+I open	yo abro
+You open	tú abres
+He/She/You opens	él/ella/usted abre
+We open	nosotros abrimos
+They/You all open	ellos/ustedes abren
+
+Preterite (Simple Past)
+English	Spanish
+I opened	yo abrí
+You opened	tú abriste
+He/She/You opened	él/ella/usted abrió
+We opened	nosotros abrimos
+They/You all opened	ellos/ustedes abrieron
+
+Imperfect (Past Habitual)
+English	Spanish
+I used to open / was opening	yo abría
+You used to open	tú abrías
+He/She/You used to open	él/ella/usted abría
+We used to open	nosotros abríamos
+They/You all used to open	ellos/ustedes abrían
+
+Future
+English	Spanish
+I will open	yo abriré
+You will open	tú abrirás
+He/She/You will open	él/ella/usted abrirá
+We will open	nosotros abriremos
+They/You all will open	ellos/ustedes abrirán
+
+Conditional
+English	Spanish
+I would open	yo abriría
+You would open	tú abrirías
+He/She/You would open	él/ella/usted abriría
+We would open	nosotros abriríamos
+They/You all would open	ellos/ustedes abrirían
+
+Present Perfect
+English	Spanish
+I have opened	yo he abierto
+You have opened	tú has abierto
+He/She/You have opened	él/ella/usted ha abierto
+We have opened	nosotros hemos abierto
+They/You all have opened	ellos/ustedes han abierto
+
+Past Perfect (Pluperfect)
+English	Spanish
+I had opened	yo había abierto
+You had opened	tú habías abierto
+He/She/You had opened	él/ella/usted había abierto
+We had opened	nosotros habíamos abierto
+They/You all had opened	ellos/ustedes habían abierto
+
+Future Perfect
+English	Spanish
+I will have opened	yo habré abierto
+You will have opened	tú habrás abierto
+He/She/You will have opened	él/ella/usted habrá abierto
+We will have opened	nosotros habremos abierto
+They/You all will have opened	ellos/ustedes habrán abierto
+
+Conditional Perfect
+English	Spanish
+I would have opened	yo habría abierto
+You would have opened	tú habrías abierto
+He/She/You would have opened	él/ella/usted habría abierto
+We would have opened	nosotros habríamos abierto
+They/You all would have opened	ellos/ustedes habrían abierto
+
+Present (Indicative)
+English	Spanish
+I receive	yo recibo
+You receive	tú recibes
+He/She/You receives	él/ella/usted recibe
+We receive	nosotros recibimos
+They/You all receive	ellos/ustedes reciben
+
+Preterite (Simple Past)
+English	Spanish
+I received	yo recibí
+You received	tú recibiste
+He/She/You received	él/ella/usted recibió
+We received	nosotros recibimos
+They/You all received	ellos/ustedes recibieron
+
+Imperfect (Past Habitual)
+English	Spanish
+I used to receive / was receiving	yo recibía
+You used to receive	tú recibías
+He/She/You used to receive	él/ella/usted recibía
+We used to receive	nosotros recibíamos
+They/You all used to receive	ellos/ustedes recibían
+
+Future
+English	Spanish
+I will receive	yo recibiré
+You will receive	tú recibirás
+He/She/You will receive	él/ella/usted recibirá
+We will receive	nosotros recibiremos
+They/You all will receive	ellos/ustedes recibirán
+
+Conditional
+English	Spanish
+I would receive	yo recibiría
+You would receive	tú recibirías
+He/She/You would receive	él/ella/usted recibiría
+We would receive	nosotros recibiríamos
+They/You all would receive	ellos/ustedes recibirían
+
+Present Perfect
+English	Spanish
+I have received	yo he recibido
+You have received	tú has recibido
+He/She/You have received	él/ella/usted ha recibido
+We have received	nosotros hemos recibido
+They/You all have received	ellos/ustedes han recibido
+
+Past Perfect (Pluperfect)
+English	Spanish
+I had received	yo había recibido
+You had received	tú habías recibido
+He/She/You had received	él/ella/usted había recibido
+We had received	nosotros habíamos recibido
+They/You all had received	ellos/ustedes habían recibido
+
+Future Perfect
+English	Spanish
+I will have received	yo habré recibido
+You will have received	tú habrás recibido
+He/She/You will have received	él/ella/usted habrá recibido
+We will have received	nosotros habremos recibido
+They/You all will have received	ellos/ustedes habrán recibido
+
+Conditional Perfect
+English	Spanish
+I would have received	yo habría recibido
+You would have received	tú habrías recibido
+He/She/You would have received	él/ella/usted habría recibido
+We would have received	nosotros habríamos recibido
+They/You all would have received	ellos/ustedes habrían recibido
+
+
+Present (Indicative)
+English	Spanish
+I attend	yo asisto
+You attend	tú asistes
+He/She/You attend	él/ella/usted asiste
+We attend	nosotros asistimos
+They/You all attend	ellos/ustedes asisten
+
+Preterite (Simple Past)
+English	Spanish
+I attended	yo asistí
+You attended	tú asististe
+He/She/You attended	él/ella/usted asistió
+We attended	nosotros asistimos
+They/You all attended	ellos/ustedes asistieron
+
+Imperfect (Past Habitual)
+English	Spanish
+I used to attend / was attending	yo asistía
+You used to attend	tú asistías
+He/She/You used to attend	él/ella/usted asistía
+We used to attend	nosotros asistíamos
+They/You all used to attend	ellos/ustedes asistían
+
+Future
+English	Spanish
+I will attend	yo asistiré
+You will attend	tú asistirás
+He/She/You will attend	él/ella/usted asistirá
+We will attend	nosotros asistiremos
+They/You all will attend	ellos/ustedes asistirán
+
+Conditional
+English	Spanish
+I would attend	yo asistiría
+You would attend	tú asistirías
+He/She/You would attend	él/ella/usted asistiría
+We would attend	nosotros asistiríamos
+They/You all would attend	ellos/ustedes asistirían
+
+ Present Perfect
+English	Spanish
+I have attended	yo he asistido
+You have attended	tú has asistido
+He/She/You have attended	él/ella/usted ha asistido
+We have attended	nosotros hemos asistido
+They/You all have attended	ellos/ustedes han asistido
+
+Past Perfect (Pluperfect)
+English	Spanish
+I had attended	yo había asistido
+You had attended	tú habías asistido
+He/She/You had attended	él/ella/usted había asistido
+We had attended	nosotros habíamos asistido
+They/You all had attended	ellos/ustedes habían asistido
+
+Future Perfect
+English	Spanish
+I will have attended	yo habré asistido
+You will have attended	tú habrás asistido
+He/She/You will have attended	él/ella/usted habrá asistido
+We will have attended	nosotros habremos asistido
+They/You all will have attended	ellos/ustedes habrán asistido
+
+Conditional Perfect
+English	Spanish
+I would have attended	yo habría asistido
+You would have attended	tú habrías asistido
+He/She/You would have attended	él/ella/usted habría asistido
+We would have attended	nosotros habríamos asistido
+They/You all would have attended	ellos/ustedes habrían asistido
+
+
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

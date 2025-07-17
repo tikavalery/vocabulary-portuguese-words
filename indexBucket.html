@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+                In a distant valley surrounded by tall mountains, there was a village where every household had a special bucket.	En un valle lejano rodeado de altas montañas, había un pueblo donde cada hogar tenía un cubo especial.
+These buckets were not ordinary; they were passed down from generation to generation.	Estos cubos no eran comunes; se pasaban de generación en generación.
+Each bucket had a unique design, carefully carved and painted by its original owner.	Cada cubo tenía un diseño único, cuidadosamente tallado y pintado por su dueño original.
+The villagers believed that the buckets held the spirit of their ancestors.	Los aldeanos creían que los cubos contenían el espíritu de sus antepasados.
+Children were taught from a young age to respect and care for the family bucket.	A los niños se les enseñaba desde pequeños a respetar y cuidar el cubo familiar.
+Every morning, people walked to the crystal-clear river that ran through the village.	Cada mañana, la gente caminaba hacia el río cristalino que atravesaba el pueblo.
+They filled their buckets with fresh water, singing old songs as they walked back home.	Llenaban sus cubos con agua fresca, cantando canciones antiguas mientras regresaban a casa.
+One day, a boy named Timo accidentally dropped his bucket, and it cracked.	Un día, un niño llamado Timo dejó caer su cubo por accidente, y este se agrietó.
+He tried to hide the damage, fearing that he had dishonored his family.	Intentó ocultar el daño, temiendo haber deshonrado a su familia.
+But the crack grew larger each time he used the bucket.	Pero la grieta se hacía más grande cada vez que usaba el cubo.
+Eventually, water leaked so badly that the bucket was nearly useless.	Finalmente, el agua se filtraba tanto que el cubo era casi inútil.
+Timo was ashamed, and he avoided the river, pretending to be sick.	Timo estaba avergonzado y evitaba el río, fingiendo estar enfermo.
+His mother, Amalia, noticed and gently asked him what was wrong.	Su madre, Amalia, lo notó y le preguntó suavemente qué le pasaba.
+With tears in his eyes, Timo confessed everything.	Con lágrimas en los ojos, Timo confesó todo.
+Instead of scolding him, Amalia smiled and said, “Let’s fix it together.”	En lugar de regañarlo, Amalia sonrió y dijo: “Vamos a arreglarlo juntos.”
+She showed Timo how to patch the crack with resin from the trees.	Le mostró a Timo cómo reparar la grieta con resina de los árboles.
+They also added small metal bands around the bucket for extra support.	También añadieron pequeñas bandas metálicas alrededor del cubo para darle más soporte.
+Though it still leaked a little, it was usable again.	Aunque aún goteaba un poco, se podía usar nuevamente.
+“Now this bucket tells a story,” Amalia said. “It shows that mistakes can be mended.”	“Ahora este cubo cuenta una historia,” dijo Amalia. “Demuestra que los errores se pueden corregir.”
+Timo began to walk proudly to the river again.	Timo volvió a caminar con orgullo hacia el río.
+Other children asked about the metal bands, and Timo shared the story with pride.	Otros niños preguntaron sobre las bandas metálicas, y Timo compartió la historia con orgullo.
+Soon, many villagers began decorating their buckets with symbols of their personal stories.	Pronto, muchos aldeanos comenzaron a decorar sus cubos con símbolos de sus historias personales.
+Buckets became not just tools, but storytellers of the village’s past and present.	Los cubos se convirtieron no solo en herramientas, sino en narradores del pasado y presente del pueblo.
+A council was formed to record each bucket’s history in the village library.	Se formó un consejo para registrar la historia de cada cubo en la biblioteca del pueblo.
+The cracked buckets were no longer hidden—they were honored.	Los cubos agrietados ya no se escondían—eran honrados.
+Each imperfection was seen as a lesson, a memory, a badge of life.	Cada imperfección era vista como una lección, un recuerdo, una insignia de la vida.
+Timo, once a shy boy, grew up to be the village’s youngest bucket historian.	Timo, que antes era un niño tímido, creció hasta convertirse en el historiador de cubos más joven del pueblo.
+He taught others that even broken things have value, and that history lives in what we carry.	Enseñó a otros que incluso las cosas rotas tienen valor, y que la historia vive en lo que llevamos.
+And so, the buckets continued to pass from hand to hand, each one richer in meaning than the last.	Y así, los cubos continuaron pasando de mano en mano, cada uno más lleno de significado que el anterior.
+valley	valle
+mountains	montañas
+village	pueblo
+household	hogar
+special bucket	cubo especial
+passed down	se pasaban
+generation	generación
+unique design	diseño único
+carved	tallado
+painted	pintado
+original owner	dueño original
+villagers	aldeanos
+spirit	espíritu
+ancestors	antepasados
+children	niños
+respect	respetar
+care for	cuidar
+crystal-clear river	río cristalino
+filled	llenaban
+fresh water	agua fresca
+old songs	canciones antiguas
+dropped	dejó caer
+cracked	se agrietó
+hide	ocultar
+damage	daño
+dishonored	deshonrado
+crack	grieta
+leaked	se filtraba
+useless	inútil
+ashamed	avergonzado
+avoided	evitaba
+pretending	fingiendo
+sick	estar enfermo
+noticed	lo notó
+confessed	confesó
+scolding	regañarlo
+fix	arreglar
+patch	reparar / remendar
+resin	resina
+trees	árboles
+metal bands	bandas metálicas
+support	soporte
+usable	se podía usar
+tells a story	cuenta una historia
+mistakes	errores
+mended	corregir / reparar
+proudly	con orgullo
+symbols	símbolos
+personal stories	historias personales
+tools	herramientas
+storytellers	narradores
+past and present	pasado y presente
+council	consejo
+history	historia
+library	biblioteca
+cracked buckets	cubos agrietados
+honored	honrados
+imperfection	imperfección
+lesson	lección
+memory	recuerdo
+badge of life	insignia de la vida
+shy boy	niño tímido
+bucket historian	historiador de cubos
+broken things	cosas rotas
+have value	tienen valor
+history lives	la historia vive
+carry	llevamos
+hand to hand	de mano en mano
+meaning	significado
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            utterance.rate = 0.8; 
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+   Thomas loved driving through the countryside in his old convertible.	A Thomas le encantaba conducir por el campo en su viejo descapotable.
+Every Sunday, he took the same winding road that led to the lake.	Cada domingo, tomaba el mismo camino sinuoso que llevaba al lago.
+His car, a red 1972 Alfa Romeo Spider, had been in his family for generations.	Su coche, un Alfa Romeo Spider rojo de 1972, había estado en su familia por generaciones.
+Although it sometimes broke down, he never thought of replacing it.	Aunque a veces se averiaba, nunca pensó en reemplazarlo.
+One morning, the engine wouldn’t start, and Thomas had to call a mechanic.	Una mañana, el motor no arrancó y Thomas tuvo que llamar a un mecánico.
+The mechanic arrived quickly and inspected the car with curiosity.	El mecánico llegó rápidamente e inspeccionó el coche con curiosidad.
+“This model is a classic,” he said, smiling as he wiped his hands.	“Este modelo es un clásico”, dijo sonriendo mientras se limpiaba las manos.
+After a few adjustments, the car roared back to life.	Después de unos ajustes, el coche volvió a rugir.
+Thomas thanked him and promised to take better care of the engine.	Thomas le dio las gracias y prometió cuidar mejor el motor.
+From that day on, he kept a small notebook to track every repair and change.	Desde ese día, llevó una pequeña libreta para registrar cada reparación y cambio.
+The car continued to run for many more years, carrying with it memories and stories.	El coche siguió funcionando durante muchos años más, llevando consigo recuerdos e historias.
+countryside	campo
+convertible	descapotable
+Sunday	domingo
+road	camino
+lake	lago
+car	coche
+engine	motor
+to drive	conducir
+winding	sinuoso
+family	familia
+generations	generaciones
+to break down	averiarse
+to replace	reemplazar
+mechanic	mecánico
+to inspect	inspeccionar
+classic	clásico
+to wipe	limpiarse
+adjustments	ajustes
+to roar	rugir
+to thank	dar las gracias
+to promise	prometer
+to take care of	cuidar
+notebook	libreta
+repair	reparación
+change	cambio
+to continue	seguir
+memories	recuerdos
+stories	historias
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            utterance.rate = 0.8; 
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

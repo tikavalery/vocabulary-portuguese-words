@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+      wagon	vagón
+waist	cintura
+wall	pared
+war	guerra
+warm	cálido
+warmth	calidez
+warning	advertencia
+warrior	guerrero
+water	agua
+wave	ola
+way	camino
+we	nosotros
+weak	débil
+weapon	arma
+weather	clima
+wedding	boda
+week	semana
+weight	peso
+welcome	bienvenido
+well	bien
+west	oeste
+wet	mojado
+what	qué
+whatever	lo que sea
+wheel	rueda
+when	cuándo
+whenever	cada vez que
+where	dónde
+whether	si
+which	cuál
+while	mientras
+white	blanco
+who	quién
+whole	entero
+whom	a quién
+whose	cuyo
+why	por qué
+wide	ancho
+wife	esposa
+wild	salvaje
+willing	dispuesto
+wind	viento
+window	ventana
+wine	vino
+wing	ala
+winter	invierno
+wire	alambre
+wise	sabio
+with	con
+within	dentro
+without	sin
+witness	testigo
+woman	mujer
+wonderful	maravilloso
+wood	madera
+wooden	de madera
+word	palabra
+worker	trabajador
+world	mundo
+worth	valor
+worthy	digno
+wound	herida
+wrist	muñeca
+writer	escritor
+writing	escritura
+wrong	incorrecto
+to wait	esperar
+to wake	despertar
+to walk	caminar
+to wander	vagar
+to want	querer
+to warn	advertir
+to wash	lavar
+to waste	desperdiciar
+to watch	observar
+to wear	llevar puesto
+to weep	llorar
+to whip	azotar
+to whisper	susurrar
+to whistle	silbar
+to will	querer
+to win	ganar
+to wipe	limpiar
+to wish	desear
+to withdraw	retirar
+to wonder	preguntarse
+to work	trabajar
+to worry	preocupar
+to wrap	envolver
+to write	escribir
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

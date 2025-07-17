@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Translator</title>
+</head>
+<body>
+    <h1>Word Translator</h1>
+    <button id="start">Start Translation</button>
+    <div id="output"></div>
+
+    <script>
+        const wordPairs = `
+            In a city that never truly slept, people moved like currents of electricity, their eyes always fixed on their cell phones.	En una ciudad que nunca dormía del todo, la gente se movía como corrientes de electricidad, con los ojos siempre fijos en sus teléfonos móviles.
+The sidewalks buzzed with ringtones, notifications, and endless scrolling.	Las aceras zumbaban con tonos de llamada, notificaciones y desplazamientos interminables.
+Among the crowds was a young woman named Elena, who couldn’t remember the last time she turned her phone off.	Entre la multitud estaba una joven llamada Elena, que no podía recordar la última vez que apagó su teléfono.
+Her life was contained inside that small device: work emails, family messages, dating apps, and even her meditation timer.	Su vida estaba contenida dentro de ese pequeño dispositivo: correos del trabajo, mensajes familiares, aplicaciones de citas e incluso su temporizador de meditación.
+One morning, Elena woke up and her phone screen was completely black.	Una mañana, Elena se despertó y la pantalla de su teléfono estaba completamente negra.
+At first, she thought it was just out of battery, so she plugged it in and waited.	Al principio pensó que solo estaba sin batería, así que lo enchufó y esperó.
+Ten minutes passed. Nothing happened.	Pasaron diez minutos. No ocurrió nada.
+She started to panic—what if she missed a meeting? What if someone needed her?	Empezó a entrar en pánico—¿y si perdía una reunión? ¿Y si alguien la necesitaba?
+With shaking hands, she restarted the phone, but still it remained dark and silent.	Con manos temblorosas, reinició el teléfono, pero aún permanecía oscuro y silencioso.
+For the first time in years, Elena stepped outside without a phone in her pocket.	Por primera vez en años, Elena salió de casa sin un teléfono en el bolsillo.
+At first, it felt like walking without shoes.	Al principio, se sintió como caminar sin zapatos.
+She didn’t know where to look, or what to do with her hands.	No sabía a dónde mirar, ni qué hacer con sus manos.
+But as she walked through the park, something strange happened—she noticed things.	Pero mientras caminaba por el parque, algo extraño ocurrió—empezó a notar cosas.
+Birds chirped from the trees, and children laughed as they chased bubbles.	Los pájaros cantaban desde los árboles, y los niños reían mientras perseguían burbujas.
+A man on a bench smiled at her, and she smiled back without thinking.	Un hombre en un banco le sonrió, y ella le devolvió la sonrisa sin pensarlo.
+Without a phone, time passed differently—more slowly, but also more deeply.	Sin un teléfono, el tiempo pasaba de manera diferente—más lentamente, pero también más profundamente.
+She sat on the grass and watched the clouds move across the sky.	Se sentó sobre el césped y observó las nubes moverse por el cielo.
+By the afternoon, she had forgotten her panic and began to feel something she hadn’t felt in years—freedom.	Por la tarde, había olvidado su pánico y empezó a sentir algo que no sentía desde hacía años—libertad.
+When she returned home, she didn’t rush to check her phone.	Cuando volvió a casa, no se apresuró a revisar su teléfono.
+She made tea, opened a real book, and let the silence fill the room.	Hizo té, abrió un libro de verdad y dejó que el silencio llenara la habitación.
+Days passed, and though the phone eventually turned back on, Elena used it less and less.	Pasaron los días, y aunque el teléfono eventualmente volvió a encenderse, Elena lo usaba cada vez menos.
+She started calling people instead of texting them.	Comenzó a llamar a las personas en lugar de enviarles mensajes.
+She made plans in advance and left her phone at home when she went out.	Hacía planes con anticipación y dejaba su teléfono en casa cuando salía.
+Her friends were surprised at first, but soon they appreciated her full attention.	Sus amigos se sorprendieron al principio, pero pronto apreciaron su atención total.
+Elena realized that her phone was a tool, not a lifeline.	Elena se dio cuenta de que su teléfono era una herramienta, no una cuerda salvavidas.
+And while she didn’t give it up completely, she no longer let it rule her life.	Y aunque no lo dejó por completo, ya no permitía que gobernara su vida.
+One evening, she watched the sunset without trying to capture it on camera.	Una tarde, vio la puesta de sol sin intentar capturarla con la cámara.
+Just as the last light faded, her phone buzzed—her mother calling.	Justo cuando la última luz se desvanecía, su teléfono vibró—era su madre llamando.
+Elena smiled, picked up the call, and said, “Hi, Mom. I was just thinking about you.”	Elena sonrió, contestó la llamada y dijo: “Hola, mamá. Justo estaba pensando en ti.”
+Some connections, she realized, are better made with the heart than with a screen.	Algunas conexiones, se dio cuenta, se hacen mejor con el corazón que con una pantalla.
+city	ciudad
+never slept	nunca dormía
+moved like currents	se movía como corrientes
+electricity	electricidad
+eyes fixed	ojos fijos
+cell phones	teléfonos móviles
+sidewalks	aceras
+buzzed	zumbaban
+ringtones	tonos de llamada
+notifications	notificaciones
+endless scrolling	desplazamientos interminables
+young woman	joven
+turned her phone off	apagó su teléfono
+device	dispositivo
+work emails	correos del trabajo
+family messages	mensajes familiares
+dating apps	aplicaciones de citas
+meditation timer	temporizador de meditación
+phone screen	pantalla de su teléfono
+completely black	completamente negra
+out of battery	sin batería
+plugged it in	lo enchufó
+panic	pánico
+missed a meeting	perdía una reunión
+shaking hands	manos temblorosas
+remained dark and silent	permanecía oscuro y silencioso
+stepped outside	salió de casa
+without a phone	sin un teléfono
+walking without shoes	caminar sin zapatos
+didn’t know what to do	no sabía qué hacer
+noticed things	empezó a notar cosas
+birds chirped	los pájaros cantaban
+children laughed	los niños reían
+bubbles	burbujas
+smiled back	le devolvió la sonrisa
+time passed differently	el tiempo pasaba de manera diferente
+more slowly, more deeply	más lentamente, más profundamente
+watched the clouds	observó las nubes
+sky	cielo
+forgot her panic	había olvidado su pánico
+freedom	libertad
+didn’t rush	no se apresuró
+made tea	hizo té
+opened a real book	abrió un libro de verdad
+silence	silencio
+turned back on	volvió a encenderse
+used it less	lo usaba cada vez menos
+calling people	llamar a las personas
+texting	enviar mensajes
+made plans in advance	hacía planes con anticipación
+left phone at home	dejaba su teléfono en casa
+full attention	atención total
+phone was a tool	teléfono era una herramienta
+not a lifeline	no una cuerda salvavidas
+rule her life	gobernara su vida
+watched the sunset	vio la puesta de sol
+capture it on camera	capturarla con la cámara
+phone buzzed	teléfono vibró
+mother calling	su madre llamando
+connections	conexiones
+better made with the heart	mejor con el corazón
+than with a screen	que con una pantalla
+        `;
+
+        const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
+
+        document.getElementById('start').addEventListener('click', () => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            words.forEach(([english, spanish]) => {
+                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
+                speakWord(english, 'en-US'); // English audio
+                speakWord(spanish, 'es-ES'); // Spanish audio
+            });
+        });
+
+        function speakWord(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            utterance.rate = 0.8; 
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
