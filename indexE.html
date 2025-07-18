@@ -12,93 +12,93 @@
 
     <script>
         const wordPairs = `
-each	cada
+            each	cada
 eager	ansioso
-ear	oído
-early	temprano
-earth	tierra
-easily	fácilmente
-east	este
+ear	ouvido
+early	cedo
+earth	terra
+easily	facilmente
+east	leste
 easy	fácil
-edge	borde
-education	educación
-effect	efecto
-effort	esfuerzo
-egg	huevo
-eight	ocho
-either	cualquiera
-elbow	codo
+edge	borda
+education	educação
+effect	efeito
+effort	esforço
+egg	ovo
+eight	oito
+either	qualquer
+elbow	cotovelo
 element	elemento
-else	más
-emotion	emoción
-empty	vacío
-end	fin
-enemy	enemigo
-energy	energía
+else	mais
+emotion	emoção
+empty	vazio
+end	fim
+enemy	inimigo
+energy	energia
 engine	motor
 England	Inglaterra
-English	inglés
+English	inglês
 enormous	enorme
 enough	suficiente
-entire	entero
-entirely	enteramente
+entire	inteiro
+entirely	completamente
 entrance	entrada
 equal	igual
 equally	igualmente
 especially	especialmente
-estate	patrimonio
+estate	propriedade
 Europe	Europa
-even	incluso
-evening	tarde
+even	até mesmo / mesmo
+evening	noite
 event	evento
 eventually	eventualmente
-ever	alguna vez
-every	cada
-everybody	todos
+ever	alguma vez
+every	todo / cada
+everybody	todo mundo
 everyone	todos
-everything	todo
-everywhere	en todas partes
-evidence	evidencia
+everything	tudo
+everywhere	em todo lugar
+evidence	evidência
 evil	malvado
-exactly	exactamente
-example	ejemplo
+exactly	exatamente
+example	exemplo
 excellent	excelente
-except	excepto
-excitement	emoción
-excuse	excusa
-exercise	ejercicio
-existence	existencia
-experience	experiencia
-explanation	explicación
-expression	expresión
-extremely	extremadamente
-eye	ojo
-eyebrow	ceja
-to earn	ganar
+except	exceto
+excitement	emoção
+excuse	desculpa
+exercise	exercício
+existence	existência
+experience	experiência
+explanation	explicação
+expression	expressão
+extremely	extremamente
+eye	olho
+eyebrow	sobrancelha
+to earn	ganhar
 to ease	aliviar
 to eat	comer
-to echo	resonar
-to embrace	abrazar
-to emerge	emerger
-to employ	emplear
+to echo	ecoar
+to embrace	abraçar
+to emerge	emergir
+to employ	empregar
 to encounter	encontrar
-to encourage	alentar
-to engage	involucrar
-to enjoy	disfrutar
+to encourage	encorajar
+to engage	envolver
+to enjoy	desfrutar
 to enter	entrar
 to escape	escapar
-to establish	establecer
+to establish	estabelecer
 to examine	examinar
-to exchange	intercambiar
+to exchange	trocar
 to excite	excitar
 to exclaim	exclamar
-to exhaust	agotar
+to exhaust	esgotar
 to exist	existir
 to expect	esperar
 to explain	explicar
-to expose	exponer
-to express	expresar
-to extend	extender
+to expose	expor
+to express	expressar
+to extend	estender
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -107,10 +107,10 @@ to extend	extender
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

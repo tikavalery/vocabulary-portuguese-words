@@ -12,147 +12,147 @@
 
     <script>
         const wordPairs = `
-            pace	paso
+            pace	ritmo
 page	página
-pain	dolor
+pain	dor
 painting	pintura
 pair	par
-palace	palacio
+palace	palácio
 pale	pálido
 palm	palma
 paper	papel
-parent	padre/madre
+parent	pai/mãe
 park	parque
 part	parte
 particular	particular
 particularly	particularmente
-partner	compañero/a
-party	fiesta
-passage	pasaje
-passenger	pasajero/a
-passion	pasión
-past	pasado
-path	camino
+partner	parceiro/a
+party	festa
+passage	passagem
+passenger	passageiro/a
+passion	paixão
+past	passado
+path	caminho
 patient	paciente
-pattern	patrón
+pattern	padrão
 peace	paz
-pen	bolígrafo
+pen	caneta
 per	por
-perfect	perfecto
-perfectly	perfectamente
-performance	actuación
-perhaps	quizás
+perfect	perfeito
+perfectly	perfeitamente
+performance	apresentação / performance
+perhaps	talvez
 period	período
-permission	permiso
-person	persona
-phone	teléfono
-photograph	fotografía
+permission	permissão
+person	pessoa
+phone	telefone
+photograph	fotografia
 phrase	frase
 physical	físico
-picture	imagen
-piece	pieza
-pile	pila
-pillow	almohada
+picture	imagem
+piece	pedaço / peça
+pile	pilha
+pillow	travesseiro
 pink	rosa
-pipe	tubo
+pipe	tubo / cano
 pistol	pistola
-pity	compasión
+pity	compaixão
 place	lugar
-plain	llano
-plane	avión
+plain	plano / simples
+plane	avião
 plant	planta
-plate	plato
-pleasant	agradable
-pleasure	placer
-plenty	abundancia
-plot	trama
-pocket	bolsillo
+plate	prato
+pleasant	agradável
+pleasure	prazer
+plenty	abundância
+plot	enredo / trama
+pocket	bolso
 poem	poema
 poet	poeta
-poetry	poesía
-point	punto
-police	policía
+poetry	poesia
+point	ponto
+police	polícia
 political	político
 pool	piscina
 poor	pobre
-porch	porche
-position	posición
-possession	posesión
-possibility	posibilidad
-possible	posible
-possibly	posiblemente
-post	publicación
-pot	olla
-pound	libra
+porch	varanda
+position	posição
+possession	posse
+possibility	possibilidade
+possible	possível
+possibly	possivelmente
+post	postagem
+pot	panela
+pound	libra / libra esterlina
 power	poder
 powerful	poderoso
-practice	práctica
-praise	alabanza
-prayer	oración
+practice	prática
+praise	louvor
+prayer	oração
 precious	precioso
-presence	presencia
+presence	presença
 present	presente
-pressure	presión
-pretty	bonito/a
+pressure	pressão
+pretty	bonito / agradável
 previous	anterior
-price	precio
-pride	orgullo
-priest	sacerdote
+price	preço
+pride	orgulho
+priest	padre / sacerdote
 prince	príncipe
-principle	principio
-prison	prisión
-prisoner	prisionero/a
-private	privado/a
-probably	probablemente
+principle	princípio
+prison	prisão
+prisoner	prisioneiro/a
+private	privado / privada
+probably	provavelmente
 problem	problema
-process	proceso
-professional	profesional
-progress	progreso
-project	proyecto
-proof	prueba
-proper	adecuado
-property	propiedad
-proud	orgulloso/a
+process	processo
+professional	profissional
+progress	progresso
+project	projeto
+proof	prova
+proper	adequado / próprio
+property	propriedade
+proud	orgulhoso/a
 public	público
 pure	puro
 purpose	propósito
-purse	bolsa
-to pack	empacar
+purse	bolsa (de mão)
+to pack	empacotar / fazer as malas
 to paint	pintar
-to pass	pasar
+to pass	passar
 to pat	acariciar
 to pause	pausar
 to pay	pagar
-to peer	mirar de cerca
-to perceive	percibir
-to perform	realizar
+to peer	espiar / olhar de perto
+to perceive	perceber
+to perform	realizar / apresentar
 to permit	permitir
 to persuade	persuadir
-to pick	elegir
-to pin	fijar
-to play	jugar
+to pick	escolher / pegar
+to pin	prender / fixar
+to play	brincar / jogar
 to please	agradar
-to pop	estallar
-to possess	poseer
+to pop	estourar / aparecer de repente
+to possess	possuir
 to pour	verter
 to pray	rezar
 to prefer	preferir
 to prepare	preparar
-to press	presionar
-to pretend	pretender
+to press	pressionar
+to pretend	fingir
 to prevent	prevenir
 to proceed	proceder
-to produce	producir
+to produce	produzir
 to promise	prometer
-to propose	proponer
+to propose	propor
 to protect	proteger
 to protest	protestar
-to prove	probar
-to provide	proporcionar
-to pull	tirar
+to prove	provar
+to provide	fornecer
+to pull	puxar
 to pursue	perseguir
-to push	empujar
-to put	poner
+to push	empurrar
+to put	pôr / colocar
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -161,10 +161,10 @@ to put	poner
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+              words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

@@ -12,25 +12,25 @@
 
     <script>
         const wordPairs = `
-           valley	valle
+valley	vale
 value	valor
-various	varios
+various	vários
 vast	vasto
-vehicle	vehículo
-version	versión
-very	muy
-vessel	vaso
-victim	víctima
+vehicle	veículo
+version	versão
+very	muito
+vessel	vaso / embarcação
+victim	vítima
 view	vista
-village	pueblo
-violence	violencia
-virtue	virtud
-vision	visión
+village	vila / povoado
+violence	violência
+virtue	virtude
+vision	visão
 visitor	visitante
 voice	voz
-volume	volumen
+volume	volume
 to vanish	desaparecer
-to venture	aventurarse
+to venture	aventurar-se
 to visit	visitar
         `;
 
@@ -40,10 +40,10 @@ to visit	visitar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+             words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

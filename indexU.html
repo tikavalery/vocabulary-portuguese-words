@@ -12,25 +12,25 @@
 
     <script>
         const wordPairs = `
-        ugly	feo
+ugly	feio
 unable	incapaz
-uncle	tío
-under	debajo
-understanding	comprensión
+uncle	tio
+under	debaixo / sob
+understanding	compreensão
 uniform	uniforme
-unknown	desconocido
+unknown	desconhecido
 unless	a menos que
-until	hasta
-unusual	inusual
-up	arriba
+until	até
+unusual	incomum / incomum
+up	para cima / acima
 upon	sobre
 upper	superior
-upstairs	arriba
-us	nosotros
-usually	generalment
+upstairs	em cima / andar de cima
+us	nós
+usually	geralmente
 to understand	entender
-to upset	molestar
-to urge	instar
+to upset	chatear / incomodar
+to urge	instar / instigar
 to use	usar
 to utter	pronunciar
         `;
@@ -41,10 +41,10 @@ to utter	pronunciar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+            words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

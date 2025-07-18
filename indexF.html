@@ -12,119 +12,119 @@
 
     <script>
         const wordPairs = `
-         face	cara
-fact	hecho
-faint	débil
+            face	rosto
+fact	fato
+faint	fraco
 fair	justo
-fairly	bastante
-faith	fe
-family	familia
+fairly	razoavelmente
+faith	fé
+family	família
 famous	famoso
 fancy	elegante
-far	lejos
-farm	granja
-farmer	granjero
+far	longe
+farm	fazenda
+farmer	fazendeiro
 fashion	moda
 fast	rápido
 fat	gordo
 fate	destino
-father	padre
+father	pai
 fault	culpa
 favor	favor
 favorite	favorito
-fear	miedo
+fear	medo
 feature	característica
-feeling	sentimiento
-fellow	compañero
-female	femenino
+feeling	sentimento
+fellow	companheiro
+female	feminino
 fence	cerca
-few	pocos
-fiction	ficción
+few	poucos
+fiction	ficção
 field	campo
-fifteen	quince
-fifty	cincuenta
+fifteen	quinze
+fifty	cinquenta
 figure	figura
-file	archivo
-film	película
+file	arquivo
+film	filme
 finally	finalmente
-fine	bien
+fine	bem
 finger	dedo
-fire	fuego
+fire	fogo
 firm	firme
 firmly	firmemente
-first	primero
-fish	pez
-fist	puño
+first	primeiro
+fish	peixe
+fist	punho
 five	cinco
-flame	llama
+flame	chama
 flat	plano
 flesh	carne
-flight	vuelo
-flood	inundación
-floor	piso
+flight	voo
+flood	enchente
+floor	chão
 flower	flor
-folk	gente
-following	siguiente
+folk	povo
+following	seguinte
 food	comida
-fool	tonto
-foolish	necio
-foot	pie
+fool	bobo
+foolish	tolo
+foot	pé
 for	para
-force	fuerza
-forehead	frente
-foreign	extranjero
-forest	bosque
-forever	para siempre
+force	força
+forehead	testa
+foreign	estrangeiro
+forest	floresta
+forever	para sempre
 form	forma
 former	anterior
-forth	adelante
+forth	adiante
 fortune	fortuna
-forty	cuarenta
-forward	hacia adelante
-four	cuatro
-frame	marco
-France	Francia
-free	libre
-freedom	libertad
-French	francés
+forty	quarenta
+forward	para frente
+four	quatro
+frame	quadro
+France	França
+free	livre
+freedom	liberdade
+French	francês
 fresh	fresco
 friend	amigo
-friendly	amistoso
-friendship	amistad
+friendly	amigável
+friendship	amizade
 from	de
 front	frente
 fruit	fruta
-full	lleno
+full	cheio
 fully	completamente
-fun	diversión
-funny	divertido
-furniture	muebles
+fun	diversão
+funny	engraçado
+furniture	móveis
 future	futuro
-to fade	desvanecerse
-to fail	fallar
-to fall	caer
+to fade	desaparecer
+to fail	falhar
+to fall	cair
 to feed	alimentar
 to feel	sentir
-to fight	pelear
-to fill	llenar
+to fight	lutar
+to fill	encher
 to find	encontrar
 to finish	terminar
-to fit	encajar
-to fix	arreglar
-to flash	parpadear
-to flee	huir
-to fling	arrojar
-to float	flotar
+to fit	caber
+to fix	consertar
+to flash	piscar
+to flee	fugir
+to fling	arremessar
+to float	flutuar
 to flow	fluir
-to fly	volar
-to focus	enfocarse
-to fold	doblar
+to fly	voar
+to focus	focar
+to fold	dobrar
 to follow	seguir
-to forget	olvidar
-to forgive	perdonar
+to forget	esquecer
+to forgive	perdoar
 to freeze	congelar
-to frighten	asustar
-to frown	fruncir el ceño
+to frighten	assustar
+to frown	franzir a testa
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -133,10 +133,10 @@ to frown	fruncir el ceño
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

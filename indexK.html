@@ -12,22 +12,22 @@
 
     <script>
         const wordPairs = `
-      key	llave
-kid	niño
+  key	chave
+kid	criança
 kind	tipo
-king	rey
-kitchen	cocina
-knee	rodilla
-knife	cuchillo
-knight	caballero
-knowledge	conocimiento
-to keep	mantener
-to kick	patear
+king	rei
+kitchen	cozinha
+knee	joelho
+knife	faca
+knight	cavaleiro
+knowledge	conhecimento
+to keep	manter
+to kick	chutar
 to kill	matar
-to kiss	besar
-to kneel	arrodillarse
-to knock	golpear
-to know	saber
+to kiss	beijar
+to kneel	ajoelhar-se
+to knock	bater
+to know	saber / conhecer
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -36,10 +36,10 @@ to know	saber
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

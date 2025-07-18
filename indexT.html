@@ -13,123 +13,122 @@
     <script>
         const wordPairs = `
 table	mesa
-tail	cola
-tale	cuento
+tail	cauda
+tale	conto
 tall	alto
-tape	cinta
-task	tarea
-taste	gusto
-tea	té
-teacher	profesor
-team	equipo
+tape	fita
+task	tarefa
+taste	gosto
+tea	chá
+teacher	professor
+team	time / equipe
 tear	lágrima
-telephone	teléfono
-television	televisión
+telephone	telefone
+television	televisão
 temple	templo
-ten	diez
-tender	tierno
-tent	tienda de campaña
-term	término
-test	prueba
+ten	dez
+tender	terno
+tent	barraca / tenda
+term	termo
+test	prova
 text	texto
 than	que
-thanks	gracias
-that	eso
-the	el / la
-thee	tú
-their	su
-them	ellos
-themselves	ellos mismos
-then	entonces
-theory	teoría
-there	allí
-therefore	por lo tanto
-these	estos
-they	ellos
-thick	grueso
-thigh	muslo
-thin	delgado
-thing	cosa
-third	tercero
-thirty	treinta
-this	este
-those	esos
-though	aunque
-thought	pensamiento
+thanks	obrigado / obrigada
+that	isso / aquele
+the	o / a
+thee	tu (arcaico)
+their	deles / delas / seu(s)
+them	eles / elas
+themselves	eles mesmos
+then	então
+theory	teoria
+there	lá / ali
+therefore	portanto / por isso
+these	estes / essas
+they	eles / elas
+thick	grosso
+thigh	coxa
+thin	fino / magro
+thing	coisa
+third	terceiro
+thirty	trinta
+this	este / esta
+those	aqueles / aquelas
+though	embora / apesar
+thought	pensamento
 thousand	mil
-threat	amenaza
-three	tres
+threat	ameaça
+three	três
 throat	garganta
-through	a través de
-throughout	a lo largo de
-thumb	pulgar
-thus	así
-thy	tu
-tight	ajustado
+through	através de
+throughout	ao longo de
+thumb	polegar
+thus	assim
+thy	teu (arcaico)
+tight	apertado
 tightly	firmemente
-till	hasta
-time	tiempo
+till	até
+time	tempo
 tiny	diminuto
-tip	consejo
+tip	dica / ponta
 title	título
-today	hoy
+today	hoje
 together	juntos
-tomorrow	mañana
-tone	tono
-tongue	lengua
-tonight	esta noche
-too	también
-tooth	diente
-top	cima
+tomorrow	amanhã
+tone	tom
+tongue	língua
+tonight	esta noite
+too	também
+tooth	dente
+top	topo
 totally	totalmente
-toward	hacia
-towards	hacia
+toward / towards	em direção a
 tower	torre
-town	pueblo
-trace	traza
+town	cidade / povoado
+trace	traço / vestígio
 track	pista
-trade	comercio
-tradition	tradición
-trail	sendero
-train	tren
-training	entrenamiento
-trap	trampa
-treasure	tesoro
-tree	árbol
-trial	juicio
-trick	truco
-trip	viaje
+trade	comércio
+tradition	tradição
+trail	trilha
+train	trem
+training	treinamento
+trap	armadilha
+treasure	tesouro
+tree	árvore
+trial	julgamento / prova
+trick	truque
+trip	viagem
 trouble	problema
-truck	camión
-truly	verdaderamente
+truck	caminhão
+truly	verdadeiramente
 trunk	tronco
-truth	verdad
-twelve	doce
-twenty	veinte
-twice	dos veces
-two	dos
+truth	verdade
+twelve	doze
+twenty	vinte
+twice	duas vezes
+two	dois
 type	tipo
 to take	tomar
-to talk	hablar
-to tap	golpear suavemente
-to teach	enseñar
+to talk	falar
+to tap	bater levemente
+to teach	ensinar
 to tell	contar
-to tend	tender
+to tend	tender / cuidar
 to thank	agradecer
 to think	pensar
-to threaten	amenazar
-to throw	lanzar
-to thrust	empujar
-to tie	atar
+to threaten	ameaçar
+to throw	lançar
+to thrust	empurrar
+to tie	amarrar
 to tire	cansar
-to toss	lanzar
+to toss	lançar / jogar
 to touch	tocar
 to travel	viajar
 to treat	tratar
-to tremble	temblar
+to tremble	tremer
 to trust	confiar
-to try	intentar
-to turn	girar
+to try	tentar
+to turn	virar / girar
 to twist	torcer
 
         `;
@@ -140,10 +139,10 @@ to twist	torcer
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+            words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

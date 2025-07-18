@@ -12,101 +12,101 @@
 
     <script>
         const wordPairs = `
-      machine	máquina
-mad	loco
+            machine	máquina
+mad	louco
 magazine	revista
 magic	magia
-maid	sirvienta
-mail	correo
+maid	empregada
+mail	correio
 main	principal
-major	importante
+major	importante / principal
 male	masculino
-man	hombre
-manner	manera
-many	muchos
+man	homem
+manner	maneira
+many	muitos
 map	mapa
-March	marzo
+March	março
 market	mercado
-marriage	matrimonio
-mass	misa
-master	maestro
-match	partido
-matter	asunto
-maybe	tal vez
+marriage	casamento
+mass	missa
+master	mestre
+match	partida / fósforo
+matter	assunto
+maybe	talvez
 me	me
-meal	comida
+meal	refeição
 meaning	significado
 measure	medida
 meat	carne
 medical	médico
-meeting	reunión
-member	miembro
-memory	memoria
+meeting	reunião
+member	membro
+memory	memória
 mere	mero
-merely	simplemente
-mess	desorden
-message	mensaje
+merely	meramente / simplesmente
+mess	bagunça
+message	mensagem
 method	método
-middle	medio
+middle	meio
 mighty	poderoso
-mile	milla
+mile	milha
 military	militar
-milk	leche
-million	millón
+milk	leite
+million	milhão
 mind	mente
-mine	mío
+mine	meu / mina (depende do uso)
 minister	ministro
 minute	minuto
-mirror	espejo
-Miss	Señorita
-mission	misión
-mistake	error
-mistress	ama
+mirror	espelho
+Miss	Senhorita
+mission	missão
+mistake	erro
+mistress	amante / senhora
 model	modelo
 modern	moderno
 moment	momento
-money	dinero
-month	mes
-mood	estado de ánimo
-moon	luna
+money	dinheiro
+month	mês
+mood	humor / estado de ânimo
+moon	lua
 moral	moral
-more	más
-morning	mañana
-most	la mayoría
+more	mais
+morning	manhã
+most	a maioria
 mostly	principalmente
-mother	madre
-motion	movimiento
-mountain	montaña
+mother	mãe
+motion	movimento
+mountain	montanha
 mouth	boca
-movement	movimiento
-movie	película
+movement	movimento
+movie	filme
 Mr	Sr.
 Mrs	Sra.
-much	mucho
-murder	asesinato
+much	muito
+murder	assassinato
 muscle	músculo
 music	música
-my	mi
-myself	yo mismo
+my	meu / minha
+myself	eu mesmo / eu mesma
 mysterious	misterioso
-mystery	misterio
-to maintain	mantener
-to make	hacer
-to manage	gestionar
+mystery	mistério
+to maintain	manter
+to make	fazer
+to manage	administrar / gerir
 to march	marchar
 to mark	marcar
-to marry	casarse
+to marry	casar-se
 to may	poder
 to mean	significar
-to meet	conocer
+to meet	encontrar / conhecer
 to mention	mencionar
-to might	podría
-to miss	extrañar
+to might	poderia
+to miss	sentir falta / perder
 to mount	montar
 to move	mover
 to murmur	murmurar
-to must	deber
-to mutter	murmurar
+to must	dever
+to mutter	resmungar
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -115,10 +115,10 @@ to mutter	murmurar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

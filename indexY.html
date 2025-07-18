@@ -12,18 +12,18 @@
 
     <script>
         const wordPairs = `
-yard	patio
-year	año
-yellow	amarillo
-yes	sí
-yesterday	ayer
-yet	aún
-you	tú
-young	joven
-your	tu
-yours	tuyo
-yourself	tú mismo
-youth	juventud
+yard	pátio
+year	ano
+yellow	amarelo
+yes	sim
+yesterday	ontem
+yet	ainda
+you	você / tu
+young	jovem
+your	seu / tua / seu
+yours	seu / tua / seu
+yourself	você mesmo / tu mesmo
+youth	juventude
 to yell	gritar
         `;
 
@@ -33,10 +33,10 @@ to yell	gritar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+           words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

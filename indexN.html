@@ -12,46 +12,46 @@
 
     <script>
         const wordPairs = `
-        nail	uña
-naked	desnudo
-name	nombre
-narrow	estrecho
-nation	nación
+            nail	unha
+naked	nu / nua
+name	nome
+narrow	estreito
+nation	nação
 native	nativo
 naturally	naturalmente
-nature	naturaleza
-near	cerca
-nearly	casi
-necessary	necesario
-neck	cuello
-neighbor	vecino
-neither	ninguno
-nerve	nervio
-nervous	nervioso
+nature	natureza
+near	perto
+nearly	quase
+necessary	necessário
+neck	pescoço
+neighbor	vizinho
+neither	nenhum dos dois
+nerve	nervo
+nervous	nervoso
 never	nunca
-new	nuevo
-news	noticias
-newspaper	periódico
-next	siguiente
-nice	agradable
-night	noche
-nine	nueve
-nobody	nadie
-noise	ruido
-none	ninguno
-nor	ni
+new	novo
+news	notícias
+newspaper	jornal
+next	próximo
+nice	legal / agradável
+night	noite
+nine	nove
+nobody	ninguém
+noise	barulho
+none	nenhum
+nor	nem
 north	norte
 nose	nariz
-not	no
+not	não
 note	nota
 nothing	nada
-notion	noción
-novel	novela
-now	ahora
+notion	noção
+novel	romance / novela
+now	agora
 number	número
-nurse	enfermera
-to need	necesitar
-to nod	asentir
+nurse	enfermeira
+to need	precisar
+to nod	assentir
 to notice	notar
         `;
 
@@ -61,10 +61,10 @@ to notice	notar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

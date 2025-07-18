@@ -12,59 +12,59 @@
 
     <script>
         const wordPairs = `
-I	yo
-ice	hielo
-if	si
-ill	enfermo
-image	imagen
-imagination	imaginación
-immediately	inmediatamente
-importance	importancia
+            I	eu
+ice	gelo
+if	se
+ill	doente
+image	imagem
+imagination	imaginação
+immediately	imediatamente
+importance	importância
 important	importante
-impossible	imposible
-impression	impresión
-in	en
-inch	pulgada
+impossible	impossível
+impression	impressão
+in	em
+inch	polegada
 incident	incidente
-indeed	de hecho
-Indian	indio
-influence	influencia
+indeed	de fato / realmente
+Indian	indiano
+influence	influência
 innocent	inocente
 inside	dentro
-instance	instancia
+instance	exemplo / caso
 instant	instante
-instantly	al instante
-instead	en lugar de
-instruction	instrucción
-intelligence	inteligencia
-intention	intención
-interest	interés
-interested	interesado
-interesting	interesante
+instantly	instantaneamente
+instead	em vez de
+instruction	instrução
+intelligence	inteligência
+intention	intenção
+interest	interesse
+interested	interessado
+interesting	interessante
 interview	entrevista
-into	en
-iron	hierro
-island	isla
-issue	asunto
-it	ello
+into	em / dentro de
+iron	ferro
+island	ilha
+issue	assunto
+it	ele / ela (neutro em português é “isso”)
 Italian	italiano
-its	su
-itself	sí mismo
+its	seu / sua
+itself	si mesmo
 to identify	identificar
 to ignore	ignorar
 to imagine	imaginar
-to impress	impresionar
+to impress	impressionar
 to include	incluir
 to increase	aumentar
 to indicate	indicar
 to inform	informar
-to inquire	preguntar
+to inquire	perguntar / indagar
 to insist	insistir
-to intend	tener la intención
-to interrupt	interrumpir
-to introduce	presentar
-to invite	invitar
-to involve	involucrar
+to intend	ter a intenção
+to interrupt	interromper
+to introduce	apresentar
+to invite	convidar
+to involve	envolver / implicar
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -73,10 +73,10 @@ to involve	involucrar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                      words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

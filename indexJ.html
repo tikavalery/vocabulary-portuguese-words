@@ -12,22 +12,22 @@
 
     <script>
         const wordPairs = `
-jacket	chaqueta
+jacket	jaqueta
 jaw	mandíbula
-Jew	judío
-job	trabajo
-joke	broma
-journey	viaje
-joy	alegría
-judge	juez
-judgment	juicio
-July	julio
-June	junio
+Jew	judeu
+job	trabalho
+joke	piada
+journey	jornada / viagem
+joy	alegria
+judge	juiz
+judgment	julgamento
+July	julho
+June	junho
 just	justo
-justice	justicia
+justice	justiça
 to jerk	sacudir
-to join	unirse
-to jump	saltar
+to join	juntar-se / unir-se
+to jump	pular / saltar
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -36,10 +36,10 @@ to jump	saltar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

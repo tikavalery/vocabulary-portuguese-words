@@ -12,100 +12,97 @@
 
     <script>
         const wordPairs = `
-         Simple Present	
-I do	hago
-You do	haces
-He/She/It does	hace
-We do	hacemos
-They do	hacen
-Simple Past	
-I did	hice
-You did	hiciste
-He/She/It did	hizo
-We did	hicimos
-They did	hicieron
-Simple Future	
-I will do	haré
-You will do	harás
-He/She/It will do	hará
-We will do	haremos
-They will do	harán
-
-Simple Present	
-I can	puedo
-You can	puedes
-He/She/It can	puede
+English Conjugation	Brazilian Portuguese Translation
+Simple Present To Do	
+I do	faço
+You do	fazes
+He/She/It does	faz
+We do	fazemos
+They do	fazem
+Simple Past To Do	
+I did	fiz
+You did	fizeste
+He/She/It did	fez
+We did	fizemos
+They did	fizeram
+Simple Future To Do	
+I will do	farei
+You will do	farás
+He/She/It will do	fará
+We will do	faremos
+They will do	farão
+Simple Present To Can	
+I can	posso
+You can	podes
+He/She/It can	pode
 We can	podemos
-They can	pueden
-Simple Past	
+They can	podem
+Simple Past To Can	
 I could	pude
-You could	pudiste
-He/She/It could	pudo
-We could	pudimos
-They could	pudieron
-Simple Future	
-I will be able to	podré
-You will be able to	podrás
-He/She/It will be able to	podrá
-We will be able to	podremos
-They will be able to	podrán
-
-Simple Present	
+You could	pudeste
+He/She/It could	pôde
+We could	pudemos
+They could	puderam
+Simple Future To Can	
+I will be able to	poderei
+You will be able to	poderás
+He/She/It will be able to	poderá
+We will be able to	poderemos
+They will be able to	poderão
+Simple Present To Say	
 I say	digo
-You say	dices
-He/She/It says	dice
-We say	decimos
-They say	dicen
-Simple Past	
-I said	dije
-You said	dijiste
-He/She/It said	dijo
-We said	dijimos
-They said	dijeron
-Simple Future	
-I will say	diré
+You say	dizes
+He/She/It says	diz
+We say	dizemos
+They say	dizem
+Simple Past To Say	
+I said	disse
+You said	disseste
+He/She/It said	disse
+We said	dissemos
+They said	disseram
+Simple Future To Say	
+I will say	direi
 You will say	dirás
 He/She/It will say	dirá
 We will say	diremos
-They will say	dirán
-
-Simple Present	
-I go	voy
-You go	vas
-He/She/It goes	va
+They will say	dirão
+Simple Present To Go	
+I go	vou
+You go	vais
+He/She/It goes	vai
 We go	vamos
-They go	van
-Simple Past	
+They go	vão
+Simple Past To Go	
 I went	fui
-You went	fuiste
-He/She/It went	fue
-We went	fuimos
-They went	fueron
-Simple Future	
-I will go	iré
+You went	foste
+He/She/It went	foi
+We went	fomos
+They went	foram
+Simple Future To Go	
+I will go	irei
 You will go	irás
 He/She/It will go	irá
 We will go	iremos
-They will go	irán
-
-Simple Present	
-I see	veo
-You see	ves
-He/She/It sees	ve
+They will go	irão
+Simple Present To See	
+I see	vejo
+You see	vês
+He/She/It sees	vê
 We see	vemos
-They see	ven
-Simple Past	
+They see	veem
+Simple Past To See	
 I saw	vi
 You saw	viste
-He/She/It saw	vio
+He/She/It saw	viu
 We saw	vimos
-They saw	vieron
-Simple Future	
-I will see	veré
+They saw	viram
+Simple Future To See	
+I will see	verei
 You will see	verás
 He/She/It will see	verá
 We will see	veremos
-They will see	verán
+They will see	verão
 
 
         `;
@@ -116,10 +113,10 @@ They will see	verán
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+           words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

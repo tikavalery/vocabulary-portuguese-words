@@ -12,80 +12,80 @@
 
     <script>
         const wordPairs = `
-          dad	papá
-daily	diario
-damage	daño
+    dad	papai
+daily	diário
+damage	dano
 damn	maldito
-danger	peligro
-dangerous	peligroso
-dark	oscuro
-darkness	oscuridad
+danger	perigo
+dangerous	perigoso
+dark	escuro
+darkness	escuridão
 darling	querido
-date	fecha
-daughter	hija
-dawn	amanecer
-day	día
-dead	muerto
-deal	trato
+date	data
+daughter	filha
+dawn	amanhecer
+day	dia
+dead	morto
+deal	acordo
 dear	querido
-death	muerte
-decision	decisión
-deck	cubierta
+death	morte
+decision	decisão
+deck	convés
 deep	profundo
 deeply	profundamente
-degree	grado
-delay	retraso
+degree	grau
+delay	atraso
 delicate	delicado
 delight	deleite
 department	departamento
-depth	profundidad
-description	descripción
-desert	desierto
-design	diseño
-desire	deseo
-desk	escritorio
-despair	desesperación
+depth	profundidade
+description	descrição
+desert	deserto
+design	design
+desire	desejo
+desk	escrivaninha
+despair	desespero
 desperate	desesperado
-despite	a pesar de
-detail	detalle
-development	desarrollo
-devil	diablo
-difference	diferencia
+despite	apesar de
+detail	detalhe
+development	desenvolvimento
+devil	diabo
+difference	diferença
 different	diferente
 difficult	difícil
-difficulty	dificultad
-dim	tenue
-dining	comedor
-dinner	cena
-direction	dirección
-directly	directamente
-dirt	suciedad
-dirty	sucio
-discussion	discusión
-distance	distancia
+difficulty	dificuldade
+dim	tênue
+dining	jantar
+dinner	jantar
+direction	direção
+directly	diretamente
+dirt	sujeira
+dirty	sujo
+discussion	discussão
+distance	distância
 distant	distante
-dog	perro
+dog	cachorro
 dollar	dólar
-door	puerta
-doorway	umbral
-double	doble
-doubt	duda
-down	abajo
-dozen	docena
-dread	temor
-dream	sueño
-driver	conductor
+door	porta
+doorway	soleira
+double	duplo
+doubt	dúvida
+down	para baixo
+dozen	dúzia
+dread	medo
+dream	sonho
+driver	motorista
 drug	droga
-drunk	borracho
+drunk	bêbado
 dry	seco
-due	debido
-dull	soso
+due	devido
+dull	sem graça
 during	durante
-dust	polvo
-duty	deber
-to dance	bailar
-to dare	atreverse
-to dash	correr rápidamente
+dust	poeira
+duty	dever
+to dance	dançar
+to dare	ousar
+to dash	correr rapidamente
 to decide	decidir
 to declare	declarar
 to defend	defender
@@ -94,28 +94,28 @@ to demand	exigir
 to deny	negar
 to depart	partir
 to depend	depender
-to descend	descender
-to describe	describir
+to descend	descer
+to describe	descrever
 to deserve	merecer
 to destroy	destruir
 to determine	determinar
-to develop	desarrollar
-to die	morir
+to develop	desenvolver
+to die	morrer
 to dig	cavar
 to direct	dirigir
 to disappear	desaparecer
-to discover	descubrir
+to discover	descobrir
 to discuss	discutir
-to display	exhibir
+to display	exibir
 to disturb	perturbar
 to divide	dividir
-to do	hacer
-to drag	arrastrar
-to draw	dibujar
-to dress	vestirse
+to do	fazer
+to drag	arrastar
+to draw	desenhar
+to dress	vestir
 to drift	derivar
 to drink	beber
-to drive	conducir
+to drive	dirigir
 to drop	soltar
         `;
 
@@ -125,10 +125,10 @@ to drop	soltar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

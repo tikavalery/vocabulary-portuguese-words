@@ -12,71 +12,71 @@
 
     <script>
         const wordPairs = `
-game	juego
-garden	jardín
-gate	puerta
-gaze	mirada
-generally	generalmente
-generation	generación
-gentle	suave
-gentleman	caballero
-gently	suavemente
-German	alemán
+game	jogo
+garden	jardim
+gate	portão
+gaze	olhar fixo
+generally	geralmente
+generation	geração
+gentle	gentil
+gentleman	cavalheiro
+gently	gentilmente
+German	alemão
 gesture	gesto
 ghost	fantasma
 giant	gigante
-gift	regalo
-girl	niña
-glad	contento
-glass	vidrio
-glasses	gafas
-glimpse	vistazo
-glow	resplandor
-God	Dios
-god	dios
-gold	oro
-golden	dorado
-good	bueno
-government	gobierno
+gift	presente
+girl	menina
+glad	contente
+glass	vidro
+glasses	óculos
+glimpse	relance
+glow	brilho
+God	Deus
+god	deus
+gold	ouro
+golden	dourado
+good	bom
+government	governo
 gown	vestido
-grace	gracia
+grace	graça
 grand	grandioso
-grandfather	abuelo
-grandmother	abuela
-grass	hierba
+grandfather	avô
+grandmother	avó
+grass	grama
 grateful	agradecido
-grave	tumba
-gray	gris
-great	genial
-Greek	griego
+grave	túmulo
+gray	cinza
+great	ótimo
+Greek	grego
 green	verde
-grey	gris
-grief	duelo
-grip	agarre
-ground	suelo
+grey	cinza
+grief	sofrimento
+grip	aperto
+ground	chão
 group	grupo
-guard	guardia
-guest	invitado
-guilty	culpable
-gun	pistola
-guy	tipo
-to gain	ganar
-to gasp	jadear
+guard	guarda
+guest	convidado
+guilty	culpado
+gun	arma
+guy	cara
+to gain	ganhar
+to gasp	ofegar
 to gather	reunir
 to get	conseguir
 to give	dar
-to glance	echar un vistazo
-to glare	mirar de forma dura
-to gleam	brillar
+to glance	dar uma olhada
+to glare	olhar fixamente
+to gleam	brilhar
 to go	ir
 to grab	agarrar
 to grant	conceder
-to grasp	asir
-to greet	saludar
-to grin	sonreír
-to groan	gemir
-to grow	crecer
-to guess	adivinar
+to grasp	agarrar / compreender
+to greet	cumprimentar
+to grin	sorrir amplamente
+to groan	gemer
+to grow	crescer
+to guess	adivinhar
 to guide	guiar
         `;
 
@@ -86,10 +86,10 @@ to guide	guiar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

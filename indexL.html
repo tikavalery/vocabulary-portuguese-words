@@ -12,78 +12,78 @@
 
     <script>
         const wordPairs = `
-         lack	falta
-lad	chico
+lack	falta
+lad	garoto
 lady	dama
 lake	lago
-lamp	lámpara
-land	tierra
+lamp	lâmpada
+land	terra
 language	idioma
-lap	regazo
+lap	colo
 large	grande
 last	último
 late	tarde
-latter	último
-laughter	risa
-law	ley
-lawyer	abogado
+latter	último / posterior
+laughter	riso
+law	lei
+lawyer	advogado
 leader	líder
 least	menos
-leather	cuero
-left	izquierda
-leg	pierna
-length	longitud
+leather	couro
+left	esquerda
+leg	perna
+length	comprimento
 less	menos
-lesson	lección
+lesson	lição
 letter	carta
-level	nivel
+level	nível
 library	biblioteca
 life	vida
 light	luz
-lightly	ligeramente
+lightly	levemente
 like	como
-likely	probable
-limit	límite
-line	línea
-link	enlace
-lip	labio
+likely	provável
+limit	limite
+line	linha
+link	link / ligação
+lip	lábio
 list	lista
-literary	literario
-little	pequeño
+literary	literário
+little	pequeno
 living	vivo
 London	Londres
-lonely	solitario
-long	largo
-loose	suelto
-Lord	Señor
-lord	señor
-loss	pérdida
-lot	mucho
-loud	ruidoso
-lovely	encantador
+lonely	solitário
+long	longo
+loose	solto
+Lord	Senhor (divino)
+lord	senhor (nobre)
+loss	perda
+lot	muito / grande quantidade
+loud	alto / barulhento
+lovely	adorável / encantador
 lover	amante
-low	bajo
-luck	suerte
-lucky	afortunado
-lunch	almuerzo
-to laugh	reír
-to lay	poner
+low	baixo
+luck	sorte
+lucky	sortudo / afortunado
+lunch	almoço
+to laugh	rir
+to lay	colocar
 to lead	liderar
-to lean	inclinarse
+to lean	inclinar-se
 to leap	saltar
 to learn	aprender
-to leave	dejar
-to let	permitir
+to leave	deixar / sair
+to let	permitir / deixar
 to lie	mentir
 to lift	levantar
-to listen	escuchar
-to live	vivir
-to load	cargar
-to lock	cerrar con llave
-to look	mirar
+to listen	ouvir / escutar
+to live	viver
+to load	carregar
+to lock	trancar
+to look	olhar
 to lose	perder
 to love	amar
-to lower	bajar
+to lower	abaixar
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -92,10 +92,10 @@ to lower	bajar
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

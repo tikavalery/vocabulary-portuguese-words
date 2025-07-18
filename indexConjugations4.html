@@ -12,103 +12,97 @@
 
     <script>
         const wordPairs = `
-       
-Simple Present	
-I should	debería
-You should	deberías
-He/She/It should	debería
-We should	deberíamos
-They should	deberían
-Simple Past	
-I should have	debería haber
-You should have	deberías haber
-He/She/It should have	debería haber
-We should have	deberíamos haber
-They should have	deberían haber
-Simple Future	
-I will should (should be)	debería
-You will should (should be)	deberías
-He/She/It will should (should be)	debería
-We will should (should be)	deberíamos
-They will should (should be)	deberían
-
-Simple Present	
-I put	pongo
-You put	pones
-He/She/It puts	pone
-We put	ponemos
-They put	ponen
-Simple Past	
-I put	puse
-You put	pusiste
-He/She/It put	puso
-We put	pusimos
-They put	pusieron
-Simple Future	
-I will put	pondré
-You will put	pondrás
-He/She/It will put	pondrá
-We will put	pondremos
-They will put	pondrán
-
-Simple Present	
-I seem	parezco
-You seem	pareces
+       English Conjugation	Brazilian Portuguese Translation
+Simple Present Should	
+I should	deveria
+You should	deveria
+He/She/It should	deveria
+We should	deveríamos
+They should	deveriam
+Simple Past Should Have	
+I should have	deveria ter
+You should have	deveria ter
+He/She/It should have	deveria ter
+We should have	deveríamos ter
+They should have	deveriam ter
+Simple Future Should (Should Be)	
+I will should (should be)	deveria
+You will should (should be)	deveria
+He/She/It will should (should be)	deveria
+We will should (should be)	deveríamos
+They will should (should be)	deveriam
+Simple Present To Put	
+I put	ponho
+You put	põe
+He/She/It puts	põe
+We put	pomos
+They put	põem
+Simple Past To Put	
+I put	pus
+You put	puseste
+He/She/It put	pôs
+We put	pusemos
+They put	puseram
+Simple Future To Put	
+I will put	porei
+You will put	porás
+He/She/It will put	porá
+We will put	poremos
+They will put	porão
+Simple Present To Seem	
+I seem	pareço
+You seem	parece
 He/She/It seems	parece
 We seem	parecemos
-They seem	parecen
-Simple Past	
-I seemed	parecí
-You seemed	pareciste
-He/She/It seemed	pareció
+They seem	parecem
+Simple Past To Seem	
+I seemed	pareci
+You seemed	pareceste
+He/She/It seemed	pareceu
 We seemed	parecemos
-They seemed	parecieron
-Simple Future	
-I will seem	pareceré
+They seemed	pareceram
+Simple Future To Seem	
+I will seem	parecerei
 You will seem	parecerás
 He/She/It will seem	parecerá
 We will seem	pareceremos
-They will seem	parecerán
-
-Simple Present	
-I remain	permanezco
-You remain	permaneces
+They will seem	parecerão
+Simple Present To Remain	
+I remain	permaneço
+You remain	permanece
 He/She/It remains	permanece
 We remain	permanecemos
-They remain	permanecen
-Simple Past	
-I remained	permanecí
-You remained	permaneciste
-He/She/It remained	permaneció
-We remained	permanecimos
-They remained	permanecieron
-Simple Future	
-I will remain	permaneceré
+They remain	permanecem
+Simple Past To Remain	
+I remained	permaneci
+You remained	permaneceste
+He/She/It remained	permaneceu
+We remained	permanecemos
+They remained	permaneceram
+Simple Future To Remain	
+I will remain	permanecerei
 You will remain	permanecerás
 He/She/It will remain	permanecerá
 We will remain	permaneceremos
-They will remain	permanecerán
-
-Simple Present	
-I stay	me quedo
-You stay	te quedas
-He/She/It stays	se queda
-We stay	nos quedamos
-They stay	se quedan
-Simple Past	
-I stayed	me quedé
-You stayed	te quedaste
-He/She/It stayed	se quedó
-We stayed	nos quedamos
-They stayed	se quedaron
-Simple Future	
-I will stay	me quedaré
-You will stay	te quedarás
-He/She/It will stay	se quedará
-We will stay	nos quedaremos
-They will stay	se quedarán
-
-
+They will remain	permanecerão
+Simple Present To Stay	
+I stay	fico
+You stay	fica
+He/She/It stays	fica
+We stay	ficamos
+They stay	ficam
+Simple Past To Stay	
+I stayed	fiquei
+You stayed	ficaste
+He/She/It stayed	ficou
+We stayed	ficamos
+They stayed	ficaram
+Simple Future To Stay	
+I will stay	ficarei
+You will stay	ficarás
+He/She/It will stay	ficará
+We will stay	ficaremos
+They will stay	ficarão
 
         `;
 
@@ -118,10 +112,10 @@ They will stay	se quedarán
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                      words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

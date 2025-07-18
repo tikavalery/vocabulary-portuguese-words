@@ -12,96 +12,96 @@
 
     <script>
         const wordPairs = `
-      wagon	vagón
+            wagon	vagão
 waist	cintura
-wall	pared
+wall	parede
 war	guerra
-warm	cálido
-warmth	calidez
-warning	advertencia
-warrior	guerrero
-water	agua
-wave	ola
-way	camino
-we	nosotros
-weak	débil
+warm	quente / caloroso
+warmth	calor
+warning	aviso / advertência
+warrior	guerreiro
+water	água
+wave	onda
+way	caminho / jeito
+we	nós
+weak	fraco
 weapon	arma
-weather	clima
-wedding	boda
+weather	tempo (clima)
+wedding	casamento / festa de casamento
 week	semana
 weight	peso
-welcome	bienvenido
-well	bien
+welcome	bem-vindo
+well	bem
 west	oeste
-wet	mojado
-what	qué
-whatever	lo que sea
-wheel	rueda
-when	cuándo
-whenever	cada vez que
-where	dónde
-whether	si
-which	cuál
-while	mientras
-white	blanco
-who	quién
-whole	entero
-whom	a quién
-whose	cuyo
-why	por qué
-wide	ancho
+wet	molhado
+what	o que / que
+whatever	seja o que for
+wheel	roda
+when	quando
+whenever	sempre que
+where	onde
+whether	se
+which	qual
+while	enquanto
+white	branco
+who	quem
+whole	inteiro / todo
+whom	a quem
+whose	cujo / cuja
+why	por que
+wide	largo / amplo
 wife	esposa
-wild	salvaje
-willing	dispuesto
-wind	viento
-window	ventana
-wine	vino
-wing	ala
-winter	invierno
-wire	alambre
-wise	sabio
-with	con
-within	dentro
-without	sin
-witness	testigo
-woman	mujer
-wonderful	maravilloso
-wood	madera
-wooden	de madera
-word	palabra
-worker	trabajador
+wild	selvagem
+willing	disposto
+wind	vento
+window	janela
+wine	vinho
+wing	asa
+winter	inverno
+wire	arame
+wise	sábio
+with	com
+within	dentro de
+without	sem
+witness	testemunha
+woman	mulher
+wonderful	maravilhoso
+wood	madeira
+wooden	de madeira
+word	palavra
+worker	trabalhador
 world	mundo
-worth	valor
+worth	valor / digno
 worthy	digno
-wound	herida
-wrist	muñeca
+wound	ferida
+wrist	pulso
 writer	escritor
-writing	escritura
-wrong	incorrecto
+writing	escrita
+wrong	errado / incorreto
 to wait	esperar
-to wake	despertar
-to walk	caminar
-to wander	vagar
+to wake	acordar / despertar
+to walk	caminhar
+to wander	vaguear / perambular
 to want	querer
-to warn	advertir
+to warn	avisar / advertir
 to wash	lavar
-to waste	desperdiciar
-to watch	observar
-to wear	llevar puesto
-to weep	llorar
-to whip	azotar
-to whisper	susurrar
-to whistle	silbar
+to waste	desperdiçar
+to watch	assistir / observar
+to wear	usar / vestir
+to weep	chorar
+to whip	chicotear / açoitar
+to whisper	sussurrar
+to whistle	assobiar
 to will	querer
-to win	ganar
-to wipe	limpiar
-to wish	desear
+to win	ganhar
+to wipe	limpar / enxugar
+to wish	desejar
 to withdraw	retirar
-to wonder	preguntarse
-to work	trabajar
+to wonder	perguntar-se / imaginar
+to work	trabalhar
 to worry	preocupar
-to wrap	envolver
-to write	escribir
+to wrap	embrulhar / envolver
+to write	escrever
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -110,10 +110,10 @@ to write	escribir
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+             words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

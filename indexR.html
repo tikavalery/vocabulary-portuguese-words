@@ -12,106 +12,106 @@
 
     <script>
         const wordPairs = `
-race	carrera
-rage	rabia
-rain	lluvia
-range	rango
-rank	rango
-rapidly	rápidamente
+        race	corrida
+rage	raiva
+rain	chuva
+range	alcance / intervalo
+rank	classificação / patente
+rapidly	rapidamente
 rare	raro
-rate	tasa
-rather	más bien
-reaction	reacción
-ready	listo
-reality	realidad
+rate	taxa
+rather	em vez / mais exatamente
+reaction	reação
+ready	pronto
+reality	realidade
 really	realmente
-rear	trasero
-reason	razón
-recent	reciente
-recently	recientemente
-record	récord
-red	rojo
-reflection	reflexión
-relation	relación
-relationship	relación
-relative	relativo
-relief	alivio
-religion	religión
+rear	traseiro
+reason	razão
+recent	recente
+recently	recentemente
+record	registro
+red	vermelho
+reflection	reflexão
+relation	relação
+relationship	relacionamento
+relative	parente / relativo
+relief	alívio
+religion	religião
 religious	religioso
-report	informe
-request	solicitud
-research	investigación
-respect	respeto
-response	respuesta
-responsibility	responsabilidad
-responsible	responsable
+report	relatório
+request	solicitação / pedido
+research	pesquisa
+respect	respeito
+response	resposta
+responsibility	responsabilidade
+responsible	responsável
 rest	descanso
 restaurant	restaurante
 result	resultado
 reward	recompensa
 rich	rico
-right	derecho
-ring	anillo
-risk	riesgo
-river	río
-road	carretera
-robe	túnica
-role	papel
+right	direito / certo
+ring	anel
+risk	risco
+river	rio
+road	estrada
+robe	manto / túnica
+role	papel (função)
 Roman	romano
 Rome	Roma
-roof	techo
-room	habitación
-root	raíz
-rope	cuerda
-rough	áspero
+roof	telhado
+room	quarto / cômodo
+root	raiz
+rope	corda
+rough	áspero / difícil
 round	redondo
-row	fila
-rule	regla
-Russian	ruso
+row	fileira
+rule	regra
+Russian	russo
 to raise	levantar
-to reach	alcanzar
-to read	leer
-to realize	darse cuenta
-to recall	recordar
-to receive	recibir
-to recognize	reconocer
+to reach	alcançar
+to read	ler
+to realize	perceber / se dar conta
+to recall	lembrar
+to receive	receber
+to recognize	reconhecer
 to recover	recuperar
-to refer	referirse
-to reflect	reflexionar
-to refuse	rechazar
+to refer	referir-se
+to reflect	refletir
+to refuse	recusar
 to regard	considerar
-to regret	arrepentirse
+to regret	arrepender-se
 to relate	relacionar
-to relax	relajarse
+to relax	relaxar
 to release	liberar
 to relieve	aliviar
 to remain	permanecer
 to remark	comentar
-to remember	recordar
-to remind	recordar
-to remove	eliminar
-to render	presentar
-to rent	alquilar
+to remember	lembrar
+to remind	lembrar / fazer lembrar
+to remove	remover
+to render	renderizar / apresentar
+to rent	alugar
 to repeat	repetir
-to replace	reemplazar
+to replace	substituir
 to reply	responder
 to represent	representar
-to require	requerir
-to rescue	rescatar
+to require	exigir / requerer
+to rescue	resgatar
 to resist	resistir
 to resolve	resolver
 to respond	responder
-to retreat	retirarse
-to return	regresar
+to retreat	recuar / retirar-se
+to return	retornar / voltar
 to reveal	revelar
-to ride	montar
-to rise	elevar
+to ride	andar / montar
+to rise	subir / erguer-se
 to roar	rugir
-to roll	rodar
-to rub	frotar
+to roll	rolar
+to rub	esfregar
 to ruin	arruinar
 to run	correr
-to rush	apresurarse
+to rush	apressar-se
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -120,10 +120,10 @@ to rush	apresurarse
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+            words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 

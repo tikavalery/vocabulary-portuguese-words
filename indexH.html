@@ -12,77 +12,77 @@
 
     <script>
         const wordPairs = `
-habit	hábito
-hair	cabello
-half	mitad
-hall	pasillo
-hand	mano
-handsome	guapo
-happiness	felicidad
+            habit	hábito
+hair	cabelo
+half	metade
+hall	corredor / salão
+hand	mão
+handsome	bonito
+happiness	felicidade
 happy	feliz
 hard	duro
-hardly	apenas
-harm	daño
-hat	sombrero
-he	él
-head	cabeza
-health	salud
-heart	corazón
+hardly	dificilmente
+harm	dano
+hat	chapéu
+he	ele
+head	cabeça
+health	saúde
+heart	coração
 heat	calor
-heaven	cielo
+heaven	céu
 heavily	pesadamente
 heavy	pesado
-heel	talón
+heel	calcanhar
 height	altura
-hell	infierno
-her	su
-here	aquí
-hero	héroe
-hers	de ella
-herself	ella misma
+hell	inferno
+her	dela / sua
+here	aqui
+hero	herói
+hers	dela
+herself	ela mesma
 high	alto
 highly	altamente
 hill	colina
-him	él
-himself	él mismo
-hint	insinuación
-hip	cadera
-his	su
-history	historia
-hole	agujero
-home	hogar
+him	ele
+himself	ele mesmo
+hint	dica / insinuação
+hip	quadril
+his	dele / seu
+history	história
+hole	buraco
+home	casa / lar
 honest	honesto
-honour	honor
+honour	honra
 hook	gancho
-horse	caballo
-hot	caliente
+horse	cavalo
+hot	quente
 hour	hora
 house	casa
-how	cómo
-however	sin embargo
+how	como
+however	porém / entretanto
 huge	enorme
 human	humano
-hundred	cien
-hungry	hambriento
-husband	esposo
-to halt	detener
-to handle	manejar
-to hang	colgar
-to happen	suceder
+hundred	cem
+hungry	com fome
+husband	marido
+to halt	parar
+to handle	lidar com / manusear
+to hang	pendurar
+to happen	acontecer
 to hate	odiar
-to have	tener
-to hear	oír
-to help	ayudar
-to hesitate	dudar
+to have	ter
+to hear	ouvir
+to help	ajudar
+to hesitate	hesitar / duvidar
 to hide	esconder
 to hire	contratar
-to hit	golpear
-to hold	sostener
+to hit	bater
+to hold	segurar
 to hope	esperar
-to hug	abrazar
-to hunt	cazar
-to hurry	apresurarse
-to hurt	herir
+to hug	abraçar
+to hunt	caçar
+to hurry	apressar-se
+to hurt	machucar / ferir
         `;
 
         const words = wordPairs.trim().split('\n').map(line => line.split('\t'));
@@ -91,10 +91,10 @@ to hurt	herir
             const outputDiv = document.getElementById('output');
             outputDiv.innerHTML = ''; // Clear previous output
 
-            words.forEach(([english, spanish]) => {
-                outputDiv.innerHTML += `<p>${english} - ${spanish}</p>`;
-                speakWord(english, 'en-US'); // English audio
-                speakWord(spanish, 'es-ES'); // Spanish audio
+                       words.forEach(([english, portuguese]) => {
+                outputDiv.innerHTML += `<p>${english} - ${portuguese}</p>`;
+                speakWord(english, 'en-US');      // English audio
+                speakWord(portuguese, 'pt-PT');   // Portuguese audio (you can change to 'pt-BR' if needed)
             });
         });
 
